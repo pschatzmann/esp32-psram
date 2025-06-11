@@ -510,7 +510,7 @@ class VectorHIMEM {
         if (reallocate(other.element_count)) {
           T temp;
           for (size_t i = 0; i < other.element_count; ++i) {
-            other.memory.read(&temp, i * sizeof(T), sizeof(T));
+            const_cast<esp32_psram::HimemBlock*>(&other.memory)->read(&temp, i * sizeof(T), sizeof(T));
             memory.write(&temp, i * sizeof(T), sizeof(T));
           }
           element_count = other.element_count;
