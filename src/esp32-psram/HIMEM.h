@@ -22,7 +22,8 @@ namespace esp32_psram {
 
 /**
  * @class HIMEMClass
- * @brief Class for managing files stored in ESP32's High Memory (HIMEM)
+ * @brief Class for managing files stored in ESP32's High Memory: Use the HIMEM object
+ * instead instaniating this class directly.
  * 
  * This class provides an interface similar to SD.h for managing files
  * that are stored in HIMEM memory (beyond the 4MB boundary) rather than on an SD card.

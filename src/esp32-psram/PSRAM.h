@@ -19,7 +19,8 @@ namespace esp32_psram {
 
 /**
  * @class PSRAMClass
- * @brief Class for managing files stored in ESP32's PSRAM
+ * @brief Class for managing files stored in ESP32's PSRAM: Use the PSRAM object
+ * instead instaniating this class directly.
  * 
  * This class provides an interface similar to SD.h for managing files
  * that are stored in PSRAM memory rather than on an SD card.
