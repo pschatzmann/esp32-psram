@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 #include <map>
-#include "VectorFile.h"
+#include "InMemoryFile.h"
 extern "C" {
 #include "esp32/himem.h"
 }

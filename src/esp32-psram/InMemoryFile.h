@@ -10,20 +10,8 @@ namespace esp32_psram {
 // Define file modes
 enum class FileMode { READ, WRITE, APPEND, READ_WRITE };
 
-#pragma once
-
-#include <Arduino.h>
-
-#include "VectorHIMEM.h"
-#include "VectorPSRAM.h"
-
-namespace esp32_psram {
-
-// Define file modes
-enum class FileMode { READ, WRITE, APPEND, READ_WRITE };
-
 /**
- * @class VectorFile
+ * @class InMemoryFile
  * @brief A file-like interface for vector-backed storage in memory
  * 
  * This class provides a file-like interface (compatible with Arduino's Stream)
@@ -32,7 +20,7 @@ enum class FileMode { READ, WRITE, APPEND, READ_WRITE };
  * as its underlying storage mechanism through the VectorPSRAM and VectorHIMEM
  * implementations.
  * 
- * VectorFile offers familiar file operations like open, close, read, write,
+ * InMemoryFile offers familiar file operations like open, close, read, write,
  * seek, and truncate while managing the data in memory rather than on disk.
  * This makes it useful for temporary storage, data processing, or situations
  * where file operations are needed but filesystem access is not available
@@ -49,13 +37,13 @@ enum class FileMode { READ, WRITE, APPEND, READ_WRITE };
  *       PSRAM operations but allow for larger storage capacity.
  */
 template <typename VectorType>
-class VectorFile : public Stream {
+class InMemoryFile : public Stream {
  public:
   /**
    * @brief Default constructor - initializes with internal vector
    */
-  VectorFile() : data_ptr(&internal_data) {
-    ESP_LOGD(TAG, "VectorFile constructor called");
+  InMemoryFile() : data_ptr(&internal_data) {
+    ESP_LOGD(TAG, "InMemoryFile constructor called");
   }
 
   /**
@@ -63,17 +51,17 @@ class VectorFile : public Stream {
    * @param filename Name of the file
    * @param mode Mode to open the file in
    */
-  VectorFile(const char* filename, FileMode mode)
+  InMemoryFile(const char* filename, FileMode mode)
       : data_ptr(&internal_data), name_(filename) {
-    ESP_LOGD(TAG, "VectorFile constructor with name and mode called");
+    ESP_LOGD(TAG, "InMemoryFile constructor with name and mode called");
     open(mode);
   }
 
   /**
    * @brief Destructor - ensures proper cleanup
    */
-  virtual ~VectorFile() {
-    ESP_LOGD(TAG, "VectorFile destructor called");
+  virtual ~InMemoryFile() {
+    ESP_LOGD(TAG, "InMemoryFile destructor called");
     close();
     if (!using_external_vector) {
       data_ptr = nullptr;
@@ -163,7 +151,7 @@ class VectorFile : public Stream {
    * @return The next byte, or -1 if no data is available
    */
   int read() override {
-    ESP_LOGD(TAG, "VectorFile::read() - position %u", (unsigned)position_);
+    ESP_LOGD(TAG, "InMemoryFile::read() - position %u", (unsigned)position_);
     if (!open_ || (mode != FileMode::READ && mode != FileMode::READ_WRITE)) {
       ESP_LOGE(TAG, "read failed: file not open for reading");
       return -1;
@@ -186,7 +174,7 @@ class VectorFile : public Stream {
    * @return Number of bytes actually read
    */
   size_t readBytes(char* buffer, size_t size) override {
-    ESP_LOGD(TAG, "VectorFile::readBytes: %u", (unsigned)size);
+    ESP_LOGD(TAG, "InMemoryFile::readBytes: %u", (unsigned)size);
     if (!open_ || (mode != FileMode::READ && mode != FileMode::READ_WRITE)) {
       ESP_LOGE(TAG, "read failed: file not open for reading");
       return 0;
@@ -244,7 +232,7 @@ class VectorFile : public Stream {
    * @return 1 if the byte was written, 0 otherwise
    */
   size_t write(uint8_t b) override {
-    ESP_LOGD(TAG, "VectorFile::write: 1 byte");
+    ESP_LOGD(TAG, "InMemoryFile::write: 1 byte");
     if (!open_ || (mode != FileMode::WRITE && mode != FileMode::APPEND &&
                    mode != FileMode::READ_WRITE)) {
       ESP_LOGE(TAG, "write failed: file not open for writing");
@@ -270,7 +258,7 @@ class VectorFile : public Stream {
    * @return Number of bytes actually written
    */
   size_t write(const uint8_t* buffer, size_t size) override {
-    ESP_LOGD(TAG, "VectorFile::write: %u", (unsigned)size);
+    ESP_LOGD(TAG, "InMemoryFile::write: %u", (unsigned)size);
     if (!open_ || (mode != FileMode::WRITE && mode != FileMode::APPEND &&
                    mode != FileMode::READ_WRITE)) {
       ESP_LOGE(TAG, "write failed: file not open for writing");
@@ -312,7 +300,7 @@ class VectorFile : public Stream {
    * @return true if successful, false otherwise
    */
   bool seek(size_t pos) {
-    ESP_LOGD(TAG, "VectorFile::seek: %u", (unsigned)pos);
+    ESP_LOGD(TAG, "InMemoryFile::seek: %u", (unsigned)pos);
     if (!open_ || pos > data_ptr->size()) {
       ESP_LOGE(TAG, "seek failed: file not open or position beyond size");
       return false;
@@ -332,7 +320,7 @@ class VectorFile : public Stream {
    * @brief Truncate the file to the current position
    */
   void truncate() {
-    ESP_LOGD(TAG, "VectorFile::truncate at position %u", (unsigned)position_);
+    ESP_LOGD(TAG, "InMemoryFile::truncate at position %u", (unsigned)position_);
     if (!open_ || (mode != FileMode::WRITE && mode != FileMode::READ_WRITE)) {
       ESP_LOGE(TAG, "truncate failed: file not open for writing");
       return;
@@ -357,7 +345,7 @@ class VectorFile : public Stream {
    * @brief Reserve storage
    * @param new_cap The new capacity of the file
    */
-  bool reserve(size_type new_cap) {
+  bool reserve(size_t new_cap) {
     if (data_ptr == nullptr) return false;
     data_ptr->reserve(new_cap);
     return true;
@@ -368,7 +356,7 @@ class VectorFile : public Stream {
    * Please note that this might dynamically grow!
    * @return The capacity of the file
    */
-  size_type capacity() const {
+  size_t capacity() const {
     if (data_ptr == nullptr) return 0;
     return data_ptr->capacity();
   }
@@ -384,11 +372,11 @@ class VectorFile : public Stream {
   String name_;
 
   // Tags for debug logging
-  static constexpr const char* TAG = "VectorFile";
+  static constexpr const char* TAG = "InMemoryFile";
 };
 
 // Type aliases for convenience
-using FilePSRAM = VectorFile<VectorPSRAM<uint8_t>>;
-using FileHIMEM = VectorFile<VectorHIMEM<uint8_t>>;
+using FilePSRAM = InMemoryFile<VectorPSRAM<uint8_t>>;
+using FileHIMEM = InMemoryFile<VectorHIMEM<uint8_t>>;
 
 }  // namespace esp32_psram

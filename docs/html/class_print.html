@@ -80,8 +80,9 @@ Inheritance diagram for Print:</div>
  <div class="center">
   <img src="class_print.png" usemap="#Print_map" alt=""/>
   <map id="Print_map" name="Print_map">
-<area href="class_stream.html" title="Base class for all character and binary stream operations." alt="Stream" shape="rect" coords="0,56,282,80"/>
-<area href="classesp32__psram_1_1_ring_buffer_stream.html" title="A circular buffer implementation that extends Arduino&#39;s Stream." alt="esp32_psram::RingBufferStream&lt; VectorType &gt;" shape="rect" coords="0,112,282,136"/>
+<area href="class_stream.html" title="Base class for all character and binary stream operations." alt="Stream" shape="rect" coords="146,56,428,80"/>
+<area href="classesp32__psram_1_1_in_memory_file.html" title="A file-like interface for vector-backed storage in memory." alt="esp32_psram::InMemoryFile&lt; VectorType &gt;" shape="rect" coords="0,112,282,136"/>
+<area href="classesp32__psram_1_1_ring_buffer_stream.html" title="A circular buffer implementation that extends Arduino&#39;s Stream." alt="esp32_psram::RingBufferStream&lt; VectorType &gt;" shape="rect" coords="292,112,574,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -308,7 +309,7 @@ Protected Member Functions</h2></td></tr>
 <p>Flush the output buffer. </p>
 <p>This function should wait for all outgoing characters to be sent. The output buffer should be empty after this call. Empty implementation by default in <a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> class. </p>
 
-<p>Reimplemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#a18fc0be9683023daed330764ec28a41f">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#a18fc0be9683023daed330764ec28a41f">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>, and <a class="el" href="classesp32__psram_1_1_in_memory_file.html#a9c89f5b5f8466c53427075cac3e7fb40">esp32_psram::InMemoryFile&lt; VectorType &gt;</a>.</p>
 
 </div>
 </div>
@@ -1578,7 +1579,7 @@ template&lt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#ab07072c3572c1beb13e1632ee1777387">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#ab07072c3572c1beb13e1632ee1777387">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>, and <a class="el" href="classesp32__psram_1_1_in_memory_file.html#a7da16fd4691a03d3d2da735d050dcef2">esp32_psram::InMemoryFile&lt; VectorType &gt;</a>.</p>
 
 </div>
 </div>
@@ -1791,7 +1792,7 @@ template&lt;&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Number of bytes written (1 on success, 0 on failure) </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This is a pure virtual function that must be implemented by subclasses </dd></dl>
 
-<p>Implemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#a5d1a671a977590083b26095a775e712b">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#a5d1a671a977590083b26095a775e712b">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>, and <a class="el" href="classesp32__psram_1_1_in_memory_file.html#a64de2fbb94e5121c8f3ab2a4d03c4e4b">esp32_psram::InMemoryFile&lt; VectorType &gt;</a>.</p>
 
 </div>
 </div>

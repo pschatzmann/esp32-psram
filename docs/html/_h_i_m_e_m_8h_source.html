@@ -73,7 +73,7 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;VectorFile.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;InMemoryFile.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;esp32/himem.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
@@ -111,9 +111,9 @@ $(function() {
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> fileData.find(std::string(filename)) != fileData.end();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classesp32__psram_1_1_h_i_m_e_m_class.html#a2b429907f97eeeecf0442a97c5fcd26c">   66</a></span>&#160;    FileHIMEM <a class="code" href="classesp32__psram_1_1_h_i_m_e_m_class.html#a2b429907f97eeeecf0442a97c5fcd26c">open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, uint8_t mode) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classesp32__psram_1_1_h_i_m_e_m_class.html#a2b429907f97eeeecf0442a97c5fcd26c">   66</a></span>&#160;    <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FileHIMEM</a> <a class="code" href="classesp32__psram_1_1_h_i_m_e_m_class.html#a2b429907f97eeeecf0442a97c5fcd26c">open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, uint8_t mode) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (!initialized) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            FileHIMEM emptyFile;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FileHIMEM</a> emptyFile;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> emptyFile;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
@@ -134,22 +134,22 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (it != fileData.end()) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">// File exists, create a new FileHIMEM pointing to existing data</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            FileHIMEM file;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            file.setVector(&amp;(it-&gt;second));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            file.setName(filename);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            file.open(fileMode);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FileHIMEM</a> file;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#ac302082136beaa3a6c30d373bb85069a">setVector</a>(&amp;(it-&gt;second));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#af3bf6acf83193d19f5a45e4d30976654">setName</a>(filename);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#aac9467b91fd4abac8b4dc5f598baff1d">open</a>(fileMode);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">return</span> file;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode != FILE_READ) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment">// File doesn&#39;t exist, create it for writing or appending</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            fileData[filenameStr] = <a class="code" href="classesp32__psram_1_1_vector_h_i_m_e_m.html">VectorHIMEM&lt;uint8_t&gt;</a>(); <span class="comment">// Create empty vector in the map</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            FileHIMEM file;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            file.setVector(&amp;(fileData[filenameStr]));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            file.setName(filename);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            file.open(fileMode);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FileHIMEM</a> file;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#ac302082136beaa3a6c30d373bb85069a">setVector</a>(&amp;(fileData[filenameStr]));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#af3bf6acf83193d19f5a45e4d30976654">setName</a>(filename);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#aac9467b91fd4abac8b4dc5f598baff1d">open</a>(fileMode);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">return</span> file;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">// File doesn&#39;t exist and mode is READ</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            FileHIMEM emptyFile;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FileHIMEM</a> emptyFile;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> emptyFile;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
@@ -199,6 +199,10 @@ $(function() {
 <div class="ttc" id="aclassesp32__psram_1_1_h_i_m_e_m_class_html_ab68a478dbe9b9f80c9c1186a9cbb0875"><div class="ttname"><a href="classesp32__psram_1_1_h_i_m_e_m_class.html#ab68a478dbe9b9f80c9c1186a9cbb0875">esp32_psram::HIMEMClass::exists</a></div><div class="ttdeci">bool exists(const char *filename)</div><div class="ttdoc">Check if a file exists in HIMEM.</div><div class="ttdef"><b>Definition:</b> HIMEM.h:55</div></div>
 <div class="ttc" id="aclassesp32__psram_1_1_h_i_m_e_m_class_html_ada03f47420b67be7ef4b2f6025f523f4"><div class="ttname"><a href="classesp32__psram_1_1_h_i_m_e_m_class.html#ada03f47420b67be7ef4b2f6025f523f4">esp32_psram::HIMEMClass::remove</a></div><div class="ttdeci">bool remove(const char *filename)</div><div class="ttdoc">Remove a file from HIMEM.</div><div class="ttdef"><b>Definition:</b> HIMEM.h:114</div></div>
 <div class="ttc" id="aclassesp32__psram_1_1_h_i_m_e_m_class_html_afd5f5ee01598fa0857f9c81610b4f31b"><div class="ttname"><a href="classesp32__psram_1_1_h_i_m_e_m_class.html#afd5f5ee01598fa0857f9c81610b4f31b">esp32_psram::HIMEMClass::rmdir</a></div><div class="ttdeci">bool rmdir(const char *dirname)</div><div class="ttdoc">Remove a directory (no-op for compatibility)</div><div class="ttdef"><b>Definition:</b> HIMEM.h:143</div></div>
+<div class="ttc" id="aclassesp32__psram_1_1_in_memory_file_html"><div class="ttname"><a href="classesp32__psram_1_1_in_memory_file.html">esp32_psram::InMemoryFile</a></div><div class="ttdoc">A file-like interface for vector-backed storage in memory.</div><div class="ttdef"><b>Definition:</b> InMemoryFile.h:40</div></div>
+<div class="ttc" id="aclassesp32__psram_1_1_in_memory_file_html_aac9467b91fd4abac8b4dc5f598baff1d"><div class="ttname"><a href="classesp32__psram_1_1_in_memory_file.html#aac9467b91fd4abac8b4dc5f598baff1d">esp32_psram::InMemoryFile::open</a></div><div class="ttdeci">bool open(FileMode mode)</div><div class="ttdoc">Open the file with the specified mode.</div><div class="ttdef"><b>Definition:</b> InMemoryFile.h:100</div></div>
+<div class="ttc" id="aclassesp32__psram_1_1_in_memory_file_html_ac302082136beaa3a6c30d373bb85069a"><div class="ttname"><a href="classesp32__psram_1_1_in_memory_file.html#ac302082136beaa3a6c30d373bb85069a">esp32_psram::InMemoryFile::setVector</a></div><div class="ttdeci">void setVector(VectorType *vec)</div><div class="ttdoc">Set the vector to use for this file.</div><div class="ttdef"><b>Definition:</b> InMemoryFile.h:75</div></div>
+<div class="ttc" id="aclassesp32__psram_1_1_in_memory_file_html_af3bf6acf83193d19f5a45e4d30976654"><div class="ttname"><a href="classesp32__psram_1_1_in_memory_file.html#af3bf6acf83193d19f5a45e4d30976654">esp32_psram::InMemoryFile::setName</a></div><div class="ttdeci">void setName(const char *name)</div><div class="ttdoc">Set the name of this file.</div><div class="ttdef"><b>Definition:</b> InMemoryFile.h:90</div></div>
 <div class="ttc" id="aclassesp32__psram_1_1_vector_h_i_m_e_m_html"><div class="ttname"><a href="classesp32__psram_1_1_vector_h_i_m_e_m.html">esp32_psram::VectorHIMEM</a></div><div class="ttdoc">Vector implementation that uses ESP32's high memory (himem) for storage.</div><div class="ttdef"><b>Definition:</b> VectorHIMEM.h:364</div></div>
 <div class="ttc" id="anamespaceesp32__psram_html"><div class="ttname"><a href="namespaceesp32__psram.html">esp32_psram</a></div><div class="ttdoc">Namespace containing ESP32 PSRAM-specific implementations.</div><div class="ttdef"><b>Definition:</b> HIMEM.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->

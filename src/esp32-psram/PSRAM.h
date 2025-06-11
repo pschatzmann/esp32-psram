@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 #include <map>
-#include "VectorFile.h"
+#include "InMemoryFile.h"
 
 // Define Arduino file mode constants if not already defined
 #ifndef FILE_READ

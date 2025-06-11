@@ -73,7 +73,7 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;VectorFile.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;InMemoryFile.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Define Arduino file mode constants if not already defined</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef FILE_READ</span></div>
@@ -108,9 +108,9 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> fileData.find(std::string(filename)) != fileData.end();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classesp32__psram_1_1_p_s_r_a_m_class.html#ad7b4cb81a8c79c0022101042e5c5ec52">   62</a></span>&#160;    FilePSRAM <a class="code" href="classesp32__psram_1_1_p_s_r_a_m_class.html#ad7b4cb81a8c79c0022101042e5c5ec52">open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, uint8_t mode) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classesp32__psram_1_1_p_s_r_a_m_class.html#ad7b4cb81a8c79c0022101042e5c5ec52">   62</a></span>&#160;    <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a> <a class="code" href="classesp32__psram_1_1_p_s_r_a_m_class.html#ad7b4cb81a8c79c0022101042e5c5ec52">open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, uint8_t mode) {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (!initialized) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            FilePSRAM emptyFile;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a> emptyFile;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">return</span> emptyFile;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
@@ -131,22 +131,22 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (it != fileData.end()) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">// File exists, create a new FilePSRAM pointing to existing data</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            FilePSRAM file;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            file.setVector(&amp;(it-&gt;second));</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            file.setName(filename);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            file.open(fileMode);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a> file;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#ac302082136beaa3a6c30d373bb85069a">setVector</a>(&amp;(it-&gt;second));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#af3bf6acf83193d19f5a45e4d30976654">setName</a>(filename);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#aac9467b91fd4abac8b4dc5f598baff1d">open</a>(fileMode);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">return</span> file;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode != FILE_READ) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="comment">// File doesn&#39;t exist, create it for writing or appending</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            fileData[filenameStr] = <a class="code" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM&lt;uint8_t&gt;</a>(); <span class="comment">// Create empty vector in the map</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            FilePSRAM file;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            file.setVector(&amp;(fileData[filenameStr]));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            file.setName(filename);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            file.open(fileMode);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a> file;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#ac302082136beaa3a6c30d373bb85069a">setVector</a>(&amp;(fileData[filenameStr]));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#af3bf6acf83193d19f5a45e4d30976654">setName</a>(filename);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            file.<a class="code" href="classesp32__psram_1_1_in_memory_file.html#aac9467b91fd4abac8b4dc5f598baff1d">open</a>(fileMode);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span> file;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// File doesn&#39;t exist and mode is READ</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            FilePSRAM emptyFile;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a> emptyFile;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">return</span> emptyFile;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
@@ -187,6 +187,10 @@ $(function() {
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">static</span> PSRAMClass PSRAM;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;} <span class="comment">// namespace esp32_psram</span></div>
+<div class="ttc" id="aclassesp32__psram_1_1_in_memory_file_html"><div class="ttname"><a href="classesp32__psram_1_1_in_memory_file.html">esp32_psram::InMemoryFile</a></div><div class="ttdoc">A file-like interface for vector-backed storage in memory.</div><div class="ttdef"><b>Definition:</b> InMemoryFile.h:40</div></div>
+<div class="ttc" id="aclassesp32__psram_1_1_in_memory_file_html_aac9467b91fd4abac8b4dc5f598baff1d"><div class="ttname"><a href="classesp32__psram_1_1_in_memory_file.html#aac9467b91fd4abac8b4dc5f598baff1d">esp32_psram::InMemoryFile::open</a></div><div class="ttdeci">bool open(FileMode mode)</div><div class="ttdoc">Open the file with the specified mode.</div><div class="ttdef"><b>Definition:</b> InMemoryFile.h:100</div></div>
+<div class="ttc" id="aclassesp32__psram_1_1_in_memory_file_html_ac302082136beaa3a6c30d373bb85069a"><div class="ttname"><a href="classesp32__psram_1_1_in_memory_file.html#ac302082136beaa3a6c30d373bb85069a">esp32_psram::InMemoryFile::setVector</a></div><div class="ttdeci">void setVector(VectorType *vec)</div><div class="ttdoc">Set the vector to use for this file.</div><div class="ttdef"><b>Definition:</b> InMemoryFile.h:75</div></div>
+<div class="ttc" id="aclassesp32__psram_1_1_in_memory_file_html_af3bf6acf83193d19f5a45e4d30976654"><div class="ttname"><a href="classesp32__psram_1_1_in_memory_file.html#af3bf6acf83193d19f5a45e4d30976654">esp32_psram::InMemoryFile::setName</a></div><div class="ttdeci">void setName(const char *name)</div><div class="ttdoc">Set the name of this file.</div><div class="ttdef"><b>Definition:</b> InMemoryFile.h:90</div></div>
 <div class="ttc" id="aclassesp32__psram_1_1_p_s_r_a_m_class_html"><div class="ttname"><a href="classesp32__psram_1_1_p_s_r_a_m_class.html">esp32_psram::PSRAMClass</a></div><div class="ttdoc">Class for managing files stored in ESP32's PSRAM.</div><div class="ttdef"><b>Definition:</b> PSRAM.h:27</div></div>
 <div class="ttc" id="aclassesp32__psram_1_1_p_s_r_a_m_class_html_a1610c12372dc2fa3d537b0dbd922180c"><div class="ttname"><a href="classesp32__psram_1_1_p_s_r_a_m_class.html#a1610c12372dc2fa3d537b0dbd922180c">esp32_psram::PSRAMClass::rmdir</a></div><div class="ttdeci">bool rmdir(const char *dirname)</div><div class="ttdoc">Remove a directory (no-op for compatibility)</div><div class="ttdef"><b>Definition:</b> PSRAM.h:139</div></div>
 <div class="ttc" id="aclassesp32__psram_1_1_p_s_r_a_m_class_html_a2462c652406a3d27c4844ab64c9a4780"><div class="ttname"><a href="classesp32__psram_1_1_p_s_r_a_m_class.html#a2462c652406a3d27c4844ab64c9a4780">esp32_psram::PSRAMClass::remove</a></div><div class="ttdeci">bool remove(const char *filename)</div><div class="ttdoc">Remove a file from PSRAM.</div><div class="ttdef"><b>Definition:</b> PSRAM.h:110</div></div>

@@ -11,7 +11,7 @@
 // Include all library components
 #include "esp32-psram/VectorPSRAM.h"   // PSRAM-backed vector
 #include "esp32-psram/VectorHIMEM.h"   // HIMEM-backed vector
-#include "esp32-psram/VectorFile.h"    // File interface using vectors
+#include "esp32-psram/InMemoryFile.h"    // File interface using vectors
 #include "esp32-psram/PSRAM.h"         // PSRAM file system
 #include "esp32-psram/HIMEM.h"         // HIMEM file system
 #include "esp32-psram/RingBufferStream.h" // Stream-based ring buffer

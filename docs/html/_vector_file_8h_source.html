@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ESP32 PSRAM Library: src/esp32-psram/VectorFile.h Source File</title>
+<title>ESP32 PSRAM Library: src/esp32-psram/InMemoryFile.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">VectorFile.h</div>  </div>
+<div class="title">InMemoryFile.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
@@ -94,20 +94,20 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">enum class</span> FileMode { READ, WRITE, APPEND, READ_WRITE };</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> VectorType&gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">class </span>VectorFile : <span class="keyword">public</span> <a class="code" href="class_stream.html">Stream</a> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">class </span>InMemoryFile : <span class="keyword">public</span> <a class="code" href="class_stream.html">Stream</a> {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  VectorFile() : data_ptr(&amp;internal_data) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile constructor called&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  InMemoryFile() : data_ptr(&amp;internal_data) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile constructor called&quot;</span>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  VectorFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, FileMode mode)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  InMemoryFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, FileMode mode)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      : data_ptr(&amp;internal_data), name_(filename) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile constructor with name and mode called&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile constructor with name and mode called&quot;</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    open(mode);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">virtual</span> ~VectorFile() {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile destructor called&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">virtual</span> ~InMemoryFile() {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile destructor called&quot;</span>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    close();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (!using_external_vector) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      data_ptr = <span class="keyword">nullptr</span>;</div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="comment">// Stream interface implementation</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">int</span> read()<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile::read() - position %u&quot;</span>, (<span class="keywordtype">unsigned</span>)position_);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile::read() - position %u&quot;</span>, (<span class="keywordtype">unsigned</span>)position_);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (!open_ || (mode != FileMode::READ &amp;&amp; mode != FileMode::READ_WRITE)) {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      ESP_LOGE(TAG, <span class="stringliteral">&quot;read failed: file not open for reading&quot;</span>);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">return</span> -1;</div>
@@ -182,7 +182,7 @@ $(function() {
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  }</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordtype">size_t</span> readBytes(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">size_t</span> size)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile::readBytes: %u&quot;</span>, (<span class="keywordtype">unsigned</span>)size);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile::readBytes: %u&quot;</span>, (<span class="keywordtype">unsigned</span>)size);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (!open_ || (mode != FileMode::READ &amp;&amp; mode != FileMode::READ_WRITE)) {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      ESP_LOGE(TAG, <span class="stringliteral">&quot;read failed: file not open for reading&quot;</span>);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      <span class="keywordflow">return</span> 0;</div>
@@ -223,7 +223,7 @@ $(function() {
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  }</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordtype">size_t</span> write(uint8_t b)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile::write: 1 byte&quot;</span>);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile::write: 1 byte&quot;</span>);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (!open_ || (mode != FileMode::WRITE &amp;&amp; mode != FileMode::APPEND &amp;&amp;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                   mode != FileMode::READ_WRITE)) {</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      ESP_LOGE(TAG, <span class="stringliteral">&quot;write failed: file not open for writing&quot;</span>);</div>
@@ -243,7 +243,7 @@ $(function() {
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  }</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordtype">size_t</span> write(<span class="keyword">const</span> uint8_t* buffer, <span class="keywordtype">size_t</span> size)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile::write: %u&quot;</span>, (<span class="keywordtype">unsigned</span>)size);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile::write: %u&quot;</span>, (<span class="keywordtype">unsigned</span>)size);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (!open_ || (mode != FileMode::WRITE &amp;&amp; mode != FileMode::APPEND &amp;&amp;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                   mode != FileMode::READ_WRITE)) {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      ESP_LOGE(TAG, <span class="stringliteral">&quot;write failed: file not open for writing&quot;</span>);</div>
@@ -280,7 +280,7 @@ $(function() {
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="comment">// File-specific methods</span></div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keywordtype">bool</span> seek(<span class="keywordtype">size_t</span> pos) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile::seek: %u&quot;</span>, (<span class="keywordtype">unsigned</span>)pos);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile::seek: %u&quot;</span>, (<span class="keywordtype">unsigned</span>)pos);</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (!open_ || pos &gt; data_ptr-&gt;size()) {</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      ESP_LOGE(TAG, <span class="stringliteral">&quot;seek failed: file not open or position beyond size&quot;</span>);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -293,7 +293,7 @@ $(function() {
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordtype">size_t</span> position()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> position_; }</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keywordtype">void</span> truncate() {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;VectorFile::truncate at position %u&quot;</span>, (<span class="keywordtype">unsigned</span>)position_);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    ESP_LOGD(TAG, <span class="stringliteral">&quot;InMemoryFile::truncate at position %u&quot;</span>, (<span class="keywordtype">unsigned</span>)position_);</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (!open_ || (mode != FileMode::WRITE &amp;&amp; mode != FileMode::READ_WRITE)) {</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;      ESP_LOGE(TAG, <span class="stringliteral">&quot;truncate failed: file not open for writing&quot;</span>);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;      <span class="keywordflow">return</span>;</div>
@@ -336,12 +336,12 @@ $(function() {
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  String name_;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  <span class="comment">// Tags for debug logging</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keyword">static</span> constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* TAG = <span class="stringliteral">&quot;VectorFile&quot;</span>;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keyword">static</span> constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* TAG = <span class="stringliteral">&quot;InMemoryFile&quot;</span>;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;};</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="comment">// Type aliases for convenience</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="keyword">using</span> FilePSRAM = VectorFile&lt;VectorPSRAM&lt;uint8_t&gt;&gt;;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword">using</span> FileHIMEM = VectorFile&lt;VectorHIMEM&lt;uint8_t&gt;&gt;;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="keyword">using</span> FilePSRAM = InMemoryFile&lt;VectorPSRAM&lt;uint8_t&gt;&gt;;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword">using</span> FileHIMEM = InMemoryFile&lt;VectorHIMEM&lt;uint8_t&gt;&gt;;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}  <span class="comment">// namespace esp32_psram</span></div>
 <div class="ttc" id="aclass_stream_html"><div class="ttname"><a href="class_stream.html">Stream</a></div><div class="ttdoc">Base class for all character and binary stream operations.</div><div class="ttdef"><b>Definition:</b> Stream.h:54</div></div>
