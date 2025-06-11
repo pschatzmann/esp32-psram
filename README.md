@@ -10,7 +10,7 @@ A comprehensive memory management library for ESP32 microcontrollers, providing 
 
 The ESP32 can only address 4MB of PSRAM directly, so the remaining 4MB (HIMEM) are usually unsued!
 
-ESP32-PSRAM is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM. 
+__ESP32-PSRAM__ is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM. 
 
 
 - **Memory-Efficient Data Structures**:
@@ -23,9 +23,9 @@ ESP32-PSRAM is a C++ library that helps you manage large amounts of data on ESP3
   - SD card-like API for familiar file operations
   
 - **Streaming Data Handling**:
-  - `RingBufferRAM`: Circular buffer implementation in RAM (Stream-based)
-  - `RingBufferPSRAM`: Circular buffer implementation in PSRAM (Stream-based)
-  - `RingBufferHIMEM`: Circular buffer implementation in high memory (Stream-based)
+  - `RingBufferStreamRAM`: Circular buffer implementation in RAM (Stream-based)
+  - `RingBufferStreamPSRAM`: Circular buffer implementation in PSRAM (Stream-based)
+  - `RingBufferStreamHIMEM`: Circular buffer implementation in high memory (Stream-based)
   - Fully compatible with Arduino's Stream class
   
 - **Typed Ring Buffers**:
