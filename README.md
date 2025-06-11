@@ -10,7 +10,7 @@ A comprehensive memory management library for ESP32 microcontrollers, providing 
 
 The ESP32 can only address 4MB of PSRAM directly, so the remaining 4MB (HIMEM) are usually unsued!
 
-__ESP32-PSRAM__ is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM. 
+__esp32-psram__ is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM. 
 
 
 - **Memory-Efficient Data Structures**:
