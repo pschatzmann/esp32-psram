@@ -35,7 +35,7 @@ __ESP32-PSRAM__ is a C++ library that helps you manage large amounts of data on 
   - Optimized for struct/class storage with proper memory management
 
 - **Use any STL Class in PSRAM**:
-  - Use any [STL class](https://en.wikipedia.org/wiki/Standard_Template_Library) that accepts an Allocator to use the [PSRAMAllocator](https://pschatzmann.github.io/esp32-psram/html/classesp32__psram_1_1_p_s_r_a_m_allocator.html)
+  - Adapt any [STL class](https://en.wikipedia.org/wiki/Standard_Template_Library) that accepts with an Allocator by using the [PSRAMAllocator](https://pschatzmann.github.io/esp32-psram/html/classesp32__psram_1_1_p_s_r_a_m_allocator.html)
 
 
 ## Installation
