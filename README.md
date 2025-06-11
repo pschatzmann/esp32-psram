@@ -20,7 +20,7 @@ __ESP32-PSRAM__ is a C++ library that helps you manage large amounts of data on 
 - **File System Abstractions**:
   - `FilePSRAM`: File-like interface backed by PSRAM
   - `FileHIMEM`: File-like interface backed by high memory
-  - SD card-like API for familiar file operations
+  - SD card-like API using familiar file operations to write to PSRAM or HIMEM.
   
 - **Streaming Data Handling**:
   - `RingBufferStreamRAM`: Circular buffer implementation in RAM (Stream-based)
