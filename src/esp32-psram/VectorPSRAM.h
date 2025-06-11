@@ -13,7 +13,7 @@
 namespace esp32_psram {
     
 /**
- * @class PSRAMAllocator
+ * @class AllocatorPSRAM
  * @brief Custom allocator that uses ESP32's PSRAM for memory allocation
  * @tparam T Type of elements to allocate
  * 
@@ -21,7 +21,7 @@ namespace esp32_psram {
  * to ensure all memory is allocated in PSRAM instead of regular RAM.
  */
 template <typename T>
-class PSRAMAllocator {
+class AllocatorPSRAM {
 public:
     using value_type = T;
     using pointer = T*;
@@ -34,7 +34,7 @@ public:
     /**
      * @brief Default constructor
      */
-    PSRAMAllocator() noexcept {}
+    AllocatorPSRAM() noexcept {}
     
     /**
      * @brief Copy constructor from another allocator type
@@ -42,7 +42,7 @@ public:
      * @param other The other allocator
      */
     template <typename U>
-    PSRAMAllocator(const PSRAMAllocator<U>&) noexcept {}
+    AllocatorPSRAM(const AllocatorPSRAM<U>&) noexcept {}
     
     /**
      * @brief Allocate memory from PSRAM
@@ -79,7 +79,7 @@ public:
      */
     template <typename U>
     struct rebind {
-        using other = PSRAMAllocator<U>;
+        using other = AllocatorPSRAM<U>;
     };
 };
 
@@ -90,7 +90,7 @@ public:
  * @return Always true since all instances are equivalent
  */
 template <typename T, typename U>
-bool operator==(const PSRAMAllocator<T>&, const PSRAMAllocator<U>&) noexcept {
+bool operator==(const AllocatorPSRAM<T>&, const AllocatorPSRAM<U>&) noexcept {
     return true;
 }
 
@@ -101,7 +101,7 @@ bool operator==(const PSRAMAllocator<T>&, const PSRAMAllocator<U>&) noexcept {
  * @return Always false since all instances are equivalent
  */
 template <typename T, typename U>
-bool operator!=(const PSRAMAllocator<T>&, const PSRAMAllocator<U>&) noexcept {
+bool operator!=(const AllocatorPSRAM<T>&, const AllocatorPSRAM<U>&) noexcept {
     return false;
 }
 
@@ -117,7 +117,7 @@ bool operator!=(const PSRAMAllocator<T>&, const PSRAMAllocator<U>&) noexcept {
 template <typename T>
 class VectorPSRAM {
 private:
-    using vector_type = std::vector<T, PSRAMAllocator<T>>;
+    using vector_type = std::vector<T, AllocatorPSRAM<T>>;
     vector_type vec;
 
 public:
@@ -138,20 +138,20 @@ public:
     /**
      * @brief Default constructor - creates an empty vector
      */
-    VectorPSRAM() : vec(PSRAMAllocator<T>()) {}
+    VectorPSRAM() : vec(AllocatorPSRAM<T>()) {}
     
     /**
      * @brief Constructs a vector with the given number of default-initialized elements
      * @param count The size of the vector
      */
-    explicit VectorPSRAM(size_type count) : vec(count, PSRAMAllocator<T>()) {}
+    explicit VectorPSRAM(size_type count) : vec(count, AllocatorPSRAM<T>()) {}
     
     /**
      * @brief Constructs a vector with the given number of copies of a value
      * @param count The size of the vector
      * @param value The value to initialize elements with
      */
-    VectorPSRAM(size_type count, const T& value) : vec(count, value, PSRAMAllocator<T>()) {}
+    VectorPSRAM(size_type count, const T& value) : vec(count, value, AllocatorPSRAM<T>()) {}
     
     /**
      * @brief Constructs a vector with the contents of the range [first, last)
@@ -160,7 +160,7 @@ public:
      * @param last Iterator to one past the last element in the range
      */
     template <typename InputIt>
-    VectorPSRAM(InputIt first, InputIt last) : vec(first, last, PSRAMAllocator<T>()) {}
+    VectorPSRAM(InputIt first, InputIt last) : vec(first, last, AllocatorPSRAM<T>()) {}
     
     /**
      * @brief Copy constructor
@@ -178,7 +178,7 @@ public:
      * @brief Initializer list constructor
      * @param init The initializer list to copy from
      */
-    VectorPSRAM(std::initializer_list<T> init) : vec(init, PSRAMAllocator<T>()) {}
+    VectorPSRAM(std::initializer_list<T> init) : vec(init, AllocatorPSRAM<T>()) {}
     
     /**
      * @brief Copy assignment operator
