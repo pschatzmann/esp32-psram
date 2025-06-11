@@ -1,4 +1,4 @@
-#include "ESP32-PSRAM.h"
+#include "esp32-psram.h"
 
 // Example data structure
 struct SensorData {

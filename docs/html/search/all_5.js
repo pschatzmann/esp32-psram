@@ -7,7 +7,7 @@ var searchData=
   ['ensure_5fblock_5fmapped_24',['ensure_block_mapped',['../classesp32__psram_1_1_himem_block.html#a5d568e8b0d465414d27492d02e730f7a',1,'esp32_psram::HimemBlock']]],
   ['erase_25',['erase',['../classesp32__psram_1_1_vector_h_i_m_e_m.html#af45b39901c0571468af942c8985ec1b1',1,'esp32_psram::VectorHIMEM::erase()'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a27791ca50de4f01d1f3f8fead8122fdf',1,'esp32_psram::VectorPSRAM::erase(const_iterator pos)'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a1f8dac96369748f7abbcb27b28bb69f1',1,'esp32_psram::VectorPSRAM::erase(const_iterator first, const_iterator last)']]],
   ['esp32_2dpsram_20library_26',['ESP32-PSRAM Library',['../index.html',1,'']]],
-  ['esp32_2dpsram_2eh_27',['ESP32-PSRAM.h',['../_e_s_p32-_p_s_r_a_m_8h.html',1,'']]],
+  ['esp32_2dpsram_2eh_27',['esp32-psram.h',['../esp32-psram_8h.html',1,'']]],
   ['esp32_5fpsram_28',['esp32_psram',['../namespaceesp32__psram.html',1,'']]],
   ['exists_29',['exists',['../classesp32__psram_1_1_h_i_m_e_m_class.html#ab68a478dbe9b9f80c9c1186a9cbb0875',1,'esp32_psram::HIMEMClass::exists()'],['../classesp32__psram_1_1_p_s_r_a_m_class.html#aa89ecf0ff9fe808df9f725ae3d622a89',1,'esp32_psram::PSRAMClass::exists()']]]
 ];
