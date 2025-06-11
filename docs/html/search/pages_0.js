@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['esp32_2dpsram_20library_196',['ESP32-PSRAM Library',['../index.html',1,'']]]
+  ['deprecated_20list_277',['Deprecated List',['../deprecated.html',1,'']]]
 ];

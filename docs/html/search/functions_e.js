@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['seek_172',['seek',['../classesp32__psram_1_1_vector_file.html#a841f1c51de8cb8133a7853f11edde34c',1,'esp32_psram::VectorFile']]],
-  ['setname_173',['setName',['../classesp32__psram_1_1_vector_file.html#a99e13ce74e4e7f543757c19de3d55d90',1,'esp32_psram::VectorFile']]],
-  ['setvector_174',['setVector',['../classesp32__psram_1_1_vector_file.html#a5ff6a7a5d10309f2f573e4ca2c1288b0',1,'esp32_psram::VectorFile']]],
-  ['shrink_5fto_5ffit_175',['shrink_to_fit',['../classesp32__psram_1_1_vector_p_s_r_a_m.html#ab85aebc3a315d7fdae9d678e3a3b0fab',1,'esp32_psram::VectorPSRAM']]],
-  ['size_176',['size',['../classesp32__psram_1_1_ring_buffer_stream.html#a244a9882f3e7b75be3ac147eaa2afe07',1,'esp32_psram::RingBufferStream::size()'],['../classesp32__psram_1_1_vector_file.html#a3bbc37948a3b3806d35d298b3dea5522',1,'esp32_psram::VectorFile::size()'],['../classesp32__psram_1_1_vector_h_i_m_e_m.html#ab0380cf0f16810e461feeb0e3e47dc23',1,'esp32_psram::VectorHIMEM::size()'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a12a8ee5e4cc278f39e39d1ce37d285cb',1,'esp32_psram::VectorPSRAM::size()']]],
-  ['swap_177',['swap',['../classesp32__psram_1_1_vector_h_i_m_e_m.html#a715e97351fe710cabff05f73a7513363',1,'esp32_psram::VectorHIMEM::swap()'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a3191db1f06de200b100a13bf51a02082',1,'esp32_psram::VectorPSRAM::swap()'],['../namespaceesp32__psram.html#a2e5469651eaca0443abbf4520b71a6e3',1,'esp32_psram::swap(VectorHIMEM&lt; T &gt; &amp;lhs, VectorHIMEM&lt; T &gt; &amp;rhs) noexcept'],['../namespaceesp32__psram.html#a684d1e79ee3ef1acb9844301009736b7',1,'esp32_psram::swap(VectorPSRAM&lt; T &gt; &amp;lhs, VectorPSRAM&lt; T &gt; &amp;rhs) noexcept']]]
+  ['timedpeek_249',['timedPeek',['../class_stream.html#ae326bf60a3c5276836526710871046fe',1,'Stream']]],
+  ['timedread_250',['timedRead',['../class_stream.html#a416a0ada5ed3c9d27f1e72c7d73f0aa1',1,'Stream']]],
+  ['totalbytes_251',['totalBytes',['../classesp32__psram_1_1_h_i_m_e_m_class.html#a119f1255431d11af6678e607e73caf9d',1,'esp32_psram::HIMEMClass::totalBytes()'],['../classesp32__psram_1_1_p_s_r_a_m_class.html#a7cced42323b5dc4385546e67b4449e07',1,'esp32_psram::PSRAMClass::totalBytes()']]],
+  ['typedringbuffer_252',['TypedRingBuffer',['../classesp32__psram_1_1_typed_ring_buffer.html#ae838039accdc8217ea5ee8f9988a20c7',1,'esp32_psram::TypedRingBuffer']]]
 ];

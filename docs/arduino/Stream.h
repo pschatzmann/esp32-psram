@@ -19,6 +19,14 @@
  parsing functions based on TextFinder library by Michael Margolis
  */
 
+/**
+ * @file Stream.h
+ * @brief Base class for character-based streams
+ * 
+ * This class provides a common interface for handling stream operations,
+ * including timeout management, parsing, and transferring data between streams.
+ */
+
 #ifndef Stream_h
 #define Stream_h
 
@@ -28,237 +36,597 @@
 #include <PolledTimeout.h>
 #include <sys/types.h> // ssize_t
 
-// compatibility macros for testing
-/*
- #define   getInt()            parseInt()
- #define   getInt(skipChar)    parseInt(skipchar)
- #define   getFloat()          parseFloat()
- #define   getFloat(skipChar)  parseFloat(skipChar)
- #define   getString( pre_string, post_string, buffer, length)
- readBytesBetween( pre_string, terminator, buffer, length)
- */
-
-// Arduino `Client: public Stream` class defines `virtual int read(uint8_t *buf, size_t size) = 0;`
-// This function is now imported into `Stream::` for `Stream::send*()`.
-// Other classes inheriting from `Stream::` and implementing `read(uint8_t *buf, size_t size)`
-// must consequently use `int` as return type, namely Hardware/SoftwareSerial, FileSystems...
+// Stream::read API returns int
 #define STREAM_READ_RETURNS_INT 1
 
 // Stream::send API is present
 #define STREAMSEND_API 1
 
+/**
+ * @class Stream
+ * @brief Base class for all character and binary stream operations
+ * 
+ * The Stream class adds buffering, timeout management, parsing operations,
+ * and data transfer capabilities to the basic Print class.
+ * It provides methods for reading and manipulating data from streams such as
+ * Serial ports, network connections, and files.
+ */
 class Stream: public Print {
     protected:
-        unsigned long _timeout = 1000;  // number of milliseconds to wait for the next char before aborting timed read
-        unsigned long _startMillis;  // used for timeout measurement
-        int timedRead();    // private method to read stream with timeout
-        int timedPeek();    // private method to peek stream with timeout
-        int peekNextDigit(bool detectDecimal = false); // returns the next numeric digit in the stream or -1 if timeout
+        unsigned long _timeout = 1000;  ///< Number of milliseconds to wait for the next char before aborting timed read
+        unsigned long _startMillis;     ///< Used for timeout measurement
+        
+        /**
+         * @brief Read a character with timeout
+         * @return The read character or -1 if timeout
+         */
+        int timedRead();
+        
+        /**
+         * @brief Peek at the next character with timeout
+         * @return The next character or -1 if timeout
+         */
+        int timedPeek();
+        
+        /**
+         * @brief Peek at the next digit in the stream
+         * @param detectDecimal Whether to consider decimal points as valid parts of numbers
+         * @return The next numeric digit or -1 if timeout or non-digit
+         */
+        int peekNextDigit(bool detectDecimal = false);
 
     public:
+        /**
+         * @brief Get the number of bytes available to read
+         * @return Number of bytes available
+         */
         virtual int available() = 0;
+        
+        /**
+         * @brief Read a single byte from the stream
+         * @return The next byte, or -1 if no data available
+         */
         virtual int read() = 0;
+        
+        /**
+         * @brief Peek at the next byte without removing it from the stream
+         * @return The next byte, or -1 if no data available
+         */
         virtual int peek() = 0;
 
+        /**
+         * @brief Default constructor
+         */
         Stream() {}
+        
+        /**
+         * @brief Virtual destructor
+         */
         virtual ~Stream() {}
 
-// parsing methods
+        // Timeout management
 
-        void setTimeout(unsigned long timeout);  // sets maximum milliseconds to wait for stream data, default is 1 second
-        unsigned long getTimeout () const { return _timeout; }
+        /**
+         * @brief Set the timeout for stream operations
+         * @param timeout Maximum milliseconds to wait for stream data
+         */
+        void setTimeout(unsigned long timeout);
+        
+        /**
+         * @brief Get the current timeout setting
+         * @return Current timeout in milliseconds
+         */
+        unsigned long getTimeout() const { return _timeout; }
 
-        bool find(const char *target);   // reads data from the stream until the target string is found
+        // Find methods
+
+        /**
+         * @brief Search for a string in the stream
+         * @param target The string to search for
+         * @return true if found, false if timed out
+         */
+        bool find(const char *target);
+        
+        /**
+         * @brief Search for a string in the stream (uint8_t variant)
+         * @param target The string to search for
+         * @return true if found, false if timed out
+         */
         bool find(uint8_t *target) {
             return find((char *) target);
         }
-        // returns true if target string is found, false if timed out (see setTimeout)
 
-        bool find(const char *target, size_t length);   // reads data from the stream until the target string of given length is found
+        /**
+         * @brief Search for a string of given length in the stream
+         * @param target The string to search for
+         * @param length Length of the target string
+         * @return true if found, false if timed out
+         */
+        bool find(const char *target, size_t length);
+        
+        /**
+         * @brief Search for a string of given length in the stream (uint8_t variant)
+         * @param target The string to search for
+         * @param length Length of the target string
+         * @return true if found, false if timed out
+         */
         bool find(const uint8_t *target, size_t length) {
             return find((char *) target, length);
         }
-        // returns true if target string is found, false if timed out
 
-        bool find(char target) { return find (&target, 1); }
+        /**
+         * @brief Search for a single character in the stream
+         * @param target Character to search for
+         * @return true if found, false if timed out
+         */
+        bool find(char target) { return find(&target, 1); }
 
-        bool findUntil(const char *target, const char *terminator);   // as find but search ends if the terminator string is found
+        /**
+         * @brief Search for a string until a terminator is found
+         * @param target The string to search for
+         * @param terminator String that terminates the search
+         * @return true if target found, false if timed out or terminator found first
+         */
+        bool findUntil(const char *target, const char *terminator);
+        
+        /**
+         * @brief Search for a string until a terminator is found (uint8_t variant)
+         * @param target The string to search for
+         * @param terminator String that terminates the search
+         * @return true if target found, false if timed out or terminator found first
+         */
         bool findUntil(const uint8_t *target, const char *terminator) {
             return findUntil((char *) target, terminator);
         }
 
-        bool findUntil(const char *target, size_t targetLen, const char *terminate, size_t termLen);   // as above but search ends if the terminate string is found
+        /**
+         * @brief Search for a string of given length until a terminator is found
+         * @param target The string to search for
+         * @param targetLen Length of the target string
+         * @param terminate String that terminates the search
+         * @param termLen Length of the terminator string
+         * @return true if target found, false if timed out or terminator found first
+         */
+        bool findUntil(const char *target, size_t targetLen, const char *terminate, size_t termLen);
+        
+        /**
+         * @brief Search for a string of given length until a terminator is found (uint8_t variant)
+         * @param target The string to search for
+         * @param targetLen Length of the target string
+         * @param terminate String that terminates the search
+         * @param termLen Length of the terminator string
+         * @return true if target found, false if timed out or terminator found first
+         */
         bool findUntil(const uint8_t *target, size_t targetLen, const char *terminate, size_t termLen) {
             return findUntil((char *) target, targetLen, terminate, termLen);
         }
 
-        long parseInt(); // returns the first valid (long) integer value from the current position.
-        // initial characters that are not digits (or the minus sign) are skipped
-        // integer is terminated by the first character that is not a digit.
+        // Parsing methods
 
-        float parseFloat();               // float version of parseInt
+        /**
+         * @brief Parse an integer from the stream
+         * @return The first valid integer value from the current position
+         * @note Skips non-digit characters and stops at first non-digit after a number
+         */
+        long parseInt();
 
-        virtual size_t readBytes(char *buffer, size_t length); // read chars from stream into buffer
+        /**
+         * @brief Parse a float from the stream
+         * @return The first valid floating point value from the current position
+         * @note Skips non-digit characters and stops at first non-digit after a number
+         */
+        float parseFloat();
+
+        // Reading methods
+
+        /**
+         * @brief Read bytes from the stream into a buffer
+         * @param buffer Buffer to store the data
+         * @param length Maximum number of bytes to read
+         * @return Number of bytes read (0 means no valid data found)
+         */
+        virtual size_t readBytes(char *buffer, size_t length);
+        
+        /**
+         * @brief Read bytes from the stream into a buffer (uint8_t variant)
+         * @param buffer Buffer to store the data
+         * @param length Maximum number of bytes to read
+         * @return Number of bytes read (0 means no valid data found)
+         */
         virtual size_t readBytes(uint8_t *buffer, size_t length) {
             return readBytes((char *) buffer, length);
         }
-        // terminates if length characters have been read or timeout (see setTimeout)
-        // returns the number of characters placed in the buffer (0 means no valid data found)
 
-        size_t readBytesUntil(char terminator, char *buffer, size_t length); // as readBytes with terminator character
+        /**
+         * @brief Read bytes until a terminator character is found
+         * @param terminator Character that terminates the read
+         * @param buffer Buffer to store the data
+         * @param length Maximum number of bytes to read
+         * @return Number of bytes read (0 means no valid data found)
+         */
+        size_t readBytesUntil(char terminator, char *buffer, size_t length);
+        
+        /**
+         * @brief Read bytes until a terminator character is found (uint8_t variant)
+         * @param terminator Character that terminates the read
+         * @param buffer Buffer to store the data
+         * @param length Maximum number of bytes to read
+         * @return Number of bytes read (0 means no valid data found)
+         */
         size_t readBytesUntil(char terminator, uint8_t *buffer, size_t length) {
             return readBytesUntil(terminator, (char *) buffer, length);
         }
-        // terminates if length characters have been read, timeout, or if the terminator character  detected
-        // returns the number of characters placed in the buffer (0 means no valid data found)
 
-        // Arduino String functions to be added here
+        /**
+         * @brief Read a string from the stream
+         * @return String containing the data read
+         */
         virtual String readString();
+        
+        /**
+         * @brief Read a string until a terminator character is found
+         * @param terminator Character that terminates the read
+         * @return String containing the data read
+         */
         String readStringUntil(char terminator);
+        
+        /**
+         * @brief Read a string until a terminator string is found a specific number of times
+         * @param terminator String that terminates the read
+         * @param untilTotalNumberOfOccurrences Number of times the terminator must be found
+         * @return String containing the data read
+         */
         String readStringUntil(const char* terminator, uint32_t untilTotalNumberOfOccurrences = 1);
 
-        virtual int read (uint8_t* buffer, size_t len);
-        int read (char* buffer, size_t len) { return read((uint8_t*)buffer, len); }
+        /**
+         * @brief Read multiple bytes from the stream
+         * @param buffer Buffer to store the data
+         * @param len Maximum number of bytes to read
+         * @return Number of bytes read
+         */
+        virtual int read(uint8_t* buffer, size_t len);
+        
+        /**
+         * @brief Read multiple bytes from the stream (char variant)
+         * @param buffer Buffer to store the data
+         * @param len Maximum number of bytes to read
+         * @return Number of bytes read
+         */
+        int read(char* buffer, size_t len) { return read((uint8_t*)buffer, len); }
 
-        //////////////////// extension: direct access to input buffer
-        // to provide when possible a pointer to available data for read
+        //////////////////// Direct buffer access API
 
-        // informs user and ::to*() on effective buffered peek API implementation
-        // by default: not available
-        virtual bool hasPeekBufferAPI () const { return false; }
+        /**
+         * @brief Check if this stream implements the peek buffer API
+         * @return true if peek buffer API is available, false otherwise
+         */
+        virtual bool hasPeekBufferAPI() const { return false; }
 
-        // returns number of byte accessible by peekBuffer()
-        virtual size_t peekAvailable () { return 0; }
+        /**
+         * @brief Get the number of bytes available in the peek buffer
+         * @return Number of bytes available
+         */
+        virtual size_t peekAvailable() { return 0; }
 
-        // returns a pointer to available data buffer (size = peekAvailable())
-        // semantic forbids any kind of ::read()
-        //     - after calling peekBuffer()
-        //     - and before calling peekConsume()
-        virtual const char* peekBuffer () { return nullptr; }
+        /**
+         * @brief Get a pointer to the peek buffer
+         * @return Pointer to the peek buffer, or nullptr if not available
+         * @note Don't call read() between peekBuffer() and peekConsume()
+         */
+        virtual const char* peekBuffer() { return nullptr; }
 
-        // consumes bytes after peekBuffer() use
-        // (then ::read() is allowed)
-        virtual void peekConsume (size_t consume) { (void)consume; }
+        /**
+         * @brief Consume bytes from the peek buffer
+         * @param consume Number of bytes to consume
+         */
+        virtual void peekConsume(size_t consume) { (void)consume; }
 
-        // by default read timeout is possible (incoming data from network,serial..)
-        // children can override to false (like String::)
-        virtual bool inputCanTimeout () { return true; }
+        /**
+         * @brief Check if input operations can timeout
+         * @return true if input operations can timeout, false otherwise
+         */
+        virtual bool inputCanTimeout() { return true; }
 
-        // (outputCanTimeout() is defined in Print::)
+        //////////////////// Stream-to-stream transfer API
 
-    ////////////////////////
-        //////////////////// extensions: Streaming streams to streams
-        // Stream::send*()
-        //
-        // Stream::send*() uses 1-copy transfers when peekBuffer API is
-        // available, or makes a regular transfer through a temporary buffer.
-        //
-        // - for efficiency, Stream classes should implement peekAPI when
-        //   possible
-        // - for an efficient timeout management, Print/Stream classes
-        //   should implement {output,input}CanTimeout()
-
+        /**
+         * @brief Time management for stream operations
+         */
         using oneShotMs = esp8266::polledTimeout::oneShotFastMs;
+        
+        /**
+         * @brief Size of temporary stack buffer for stream transfers
+         */
         static constexpr int temporaryStackBufferSize = 64;
 
-        // ::send*() methods:
-        // - always stop before timeout when "no-more-input-possible-data"
-        //   or "no-more-output-possible-data" condition is met
-        // - always return number of transferred bytes
-        // When result is 0 or less than requested maxLen, Print::getLastSend()
-        // contains an error reason.
+        /**
+         * @brief Status codes for stream transfer operations
+         */
+        enum class Report
+        {
+            Success = 0,       ///< Operation completed successfully
+            TimedOut,          ///< Operation timed out
+            ReadError,         ///< Error reading from source
+            WriteError,        ///< Error writing to destination
+            ShortOperation,    ///< Operation completed but transferred less than requested
+        };
+
+        // Deprecated methods - retained for compatibility
 
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
-        // transfers already buffered / immediately available data (no timeout)
-        // returns number of transferred bytes
-        [[deprecated]] size_t sendAvailable (Print* to) { return sendGeneric(to, -1, -1, oneShotMs::alwaysExpired); }
-        [[deprecated]] size_t sendAvailable (Print& to) { return sendAvailable(&to); }
+        /**
+         * @brief Transfer available data without waiting (deprecated)
+         * @param to Destination stream
+         * @return Number of bytes transferred
+         * @deprecated Use the Stream* variant instead
+         */
+        [[deprecated]] size_t sendAvailable(Print* to) { return sendGeneric(to, -1, -1, oneShotMs::alwaysExpired); }
+        
+        /**
+         * @brief Transfer available data without waiting (deprecated)
+         * @param to Destination stream
+         * @return Number of bytes transferred
+         * @deprecated Use the Stream* variant instead
+         */
+        [[deprecated]] size_t sendAvailable(Print& to) { return sendAvailable(&to); }
 
-        // transfers data until timeout
-        // returns number of transferred bytes
-        [[deprecated]] size_t sendAll (Print* to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, -1, -1, timeoutMs); }
-        [[deprecated]] size_t sendAll (Print& to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendAll(&to, timeoutMs); }
+        /**
+         * @brief Transfer all data with timeout (deprecated)
+         * @param to Destination stream
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         * @deprecated Use the Stream* variant instead
+         */
+        [[deprecated]] size_t sendAll(Print* to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, -1, -1, timeoutMs); }
+        
+        /**
+         * @brief Transfer all data with timeout (deprecated)
+         * @param to Destination stream
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         * @deprecated Use the Stream* variant instead
+         */
+        [[deprecated]] size_t sendAll(Print& to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendAll(&to, timeoutMs); }
 
-        // transfers data until a char is encountered (the char is swallowed but not transferred) with timeout
-        // returns number of transferred bytes
-        [[deprecated]] size_t sendUntil (Print* to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, -1, readUntilChar, timeoutMs); }
-        [[deprecated]] size_t sendUntil (Print& to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendUntil(&to, readUntilChar, timeoutMs); }
+        /**
+         * @brief Transfer data until a specific character is found (deprecated)
+         * @param to Destination stream
+         * @param readUntilChar Character to stop at
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         * @deprecated Use the Stream* variant instead
+         */
+        [[deprecated]] size_t sendUntil(Print* to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, -1, readUntilChar, timeoutMs); }
+        
+        /**
+         * @brief Transfer data until a specific character is found (deprecated)
+         * @param to Destination stream
+         * @param readUntilChar Character to stop at
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         * @deprecated Use the Stream* variant instead
+         */
+        [[deprecated]] size_t sendUntil(Print& to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendUntil(&to, readUntilChar, timeoutMs); }
 
-        // transfers data until requested size or timeout
-        // returns number of transferred bytes
-        [[deprecated]] size_t sendSize (Print* to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, maxLen, -1, timeoutMs); }
-        [[deprecated]] size_t sendSize (Print& to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendSize(&to, maxLen, timeoutMs); }
+        /**
+         * @brief Transfer a specific amount of data with timeout (deprecated)
+         * @param to Destination stream
+         * @param maxLen Maximum number of bytes to transfer
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         * @deprecated Use the Stream* variant instead
+         */
+        [[deprecated]] size_t sendSize(Print* to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, maxLen, -1, timeoutMs); }
+        
+        /**
+         * @brief Transfer a specific amount of data with timeout (deprecated)
+         * @param to Destination stream
+         * @param maxLen Maximum number of bytes to transfer
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         * @deprecated Use the Stream* variant instead
+         */
+        [[deprecated]] size_t sendSize(Print& to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendSize(&to, maxLen, timeoutMs); }
 
 #pragma GCC diagnostic pop
 
-        // transfers already buffered / immediately available data (no timeout)
-        // returns number of transferred bytes
-        size_t sendAvailable (Stream* to) { return sendGeneric(to, -1, -1, oneShotMs::alwaysExpired); }
-        size_t sendAvailable (Stream& to) { return sendAvailable(&to); }
-        size_t sendAvailable (Stream&& to) { return sendAvailable(&to); }
+        // Current Stream-to-Stream methods
 
-        // transfers data until timeout
-        // returns number of transferred bytes
-        size_t sendAll (Stream* to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, -1, -1, timeoutMs); }
-        size_t sendAll (Stream& to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendAll(&to, timeoutMs); }
-        size_t sendAll (Stream&& to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendAll(&to, timeoutMs); }
+        /**
+         * @brief Transfer available data without waiting
+         * @param to Destination stream
+         * @return Number of bytes transferred
+         */
+        size_t sendAvailable(Stream* to) { return sendGeneric(to, -1, -1, oneShotMs::alwaysExpired); }
+        
+        /**
+         * @brief Transfer available data without waiting
+         * @param to Destination stream
+         * @return Number of bytes transferred
+         */
+        size_t sendAvailable(Stream& to) { return sendAvailable(&to); }
+        
+        /**
+         * @brief Transfer available data without waiting
+         * @param to Destination stream
+         * @return Number of bytes transferred
+         */
+        size_t sendAvailable(Stream&& to) { return sendAvailable(&to); }
 
-        // transfers data until a char is encountered (the char is swallowed but not transferred) with timeout
-        // returns number of transferred bytes
-        size_t sendUntil (Stream* to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, -1, readUntilChar, timeoutMs); }
-        size_t sendUntil (Stream& to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendUntil(&to, readUntilChar, timeoutMs); }
-        size_t sendUntil (Stream&& to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendUntil(&to, readUntilChar, timeoutMs); }
+        /**
+         * @brief Transfer all data with timeout
+         * @param to Destination stream
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendAll(Stream* to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, -1, -1, timeoutMs); }
+        
+        /**
+         * @brief Transfer all data with timeout
+         * @param to Destination stream
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendAll(Stream& to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendAll(&to, timeoutMs); }
+        
+        /**
+         * @brief Transfer all data with timeout
+         * @param to Destination stream
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendAll(Stream&& to, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendAll(&to, timeoutMs); }
 
-        // transfers data until requested size or timeout
-        // returns number of transferred bytes
-        size_t sendSize (Stream* to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, maxLen, -1, timeoutMs); }
-        size_t sendSize (Stream& to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendSize(&to, maxLen, timeoutMs); }
-        size_t sendSize (Stream&& to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendSize(&to, maxLen, timeoutMs); }
+        /**
+         * @brief Transfer data until a specific character is found
+         * @param to Destination stream
+         * @param readUntilChar Character to stop at (the character is read but not transferred)
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendUntil(Stream* to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, -1, readUntilChar, timeoutMs); }
+        
+        /**
+         * @brief Transfer data until a specific character is found
+         * @param to Destination stream
+         * @param readUntilChar Character to stop at (the character is read but not transferred)
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendUntil(Stream& to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendUntil(&to, readUntilChar, timeoutMs); }
+        
+        /**
+         * @brief Transfer data until a specific character is found
+         * @param to Destination stream
+         * @param readUntilChar Character to stop at (the character is read but not transferred)
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendUntil(Stream&& to, const int readUntilChar, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendUntil(&to, readUntilChar, timeoutMs); }
 
-        // remaining size (-1 by default = unknown)
-        virtual ssize_t streamRemaining () { return -1; }
+        /**
+         * @brief Transfer a specific amount of data with timeout
+         * @param to Destination stream
+         * @param maxLen Maximum number of bytes to transfer
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendSize(Stream* to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendGeneric(to, maxLen, -1, timeoutMs); }
+        
+        /**
+         * @brief Transfer a specific amount of data with timeout
+         * @param to Destination stream
+         * @param maxLen Maximum number of bytes to transfer
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendSize(Stream& to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendSize(&to, maxLen, timeoutMs); }
+        
+        /**
+         * @brief Transfer a specific amount of data with timeout
+         * @param to Destination stream
+         * @param maxLen Maximum number of bytes to transfer
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendSize(Stream&& to, const ssize_t maxLen, const oneShotMs::timeType timeoutMs = oneShotMs::neverExpires) { return sendSize(&to, maxLen, timeoutMs); }
 
-        enum class Report
-        {
-            Success = 0,
-            TimedOut,
-            ReadError,
-            WriteError,
-            ShortOperation,
-        };
+        /**
+         * @brief Get the number of bytes remaining in the stream
+         * @return Number of bytes remaining, or -1 if unknown
+         */
+        virtual ssize_t streamRemaining() { return -1; }
 
-        Report getLastSendReport () const { return _sendReport; }
+        /**
+         * @brief Get the result of the last send operation
+         * @return Status code indicating success or failure reason
+         */
+        Report getLastSendReport() const { return _sendReport; }
 
     protected:
+        /**
+         * @brief Generic transfer method for Print objects (deprecated)
+         * @param to Destination stream
+         * @param len Maximum number of bytes to transfer (-1 for unlimited)
+         * @param readUntilChar Character to stop at (-1 for none)
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
         [[deprecated]]
-        size_t sendGeneric (Print* to,
-                            const ssize_t len = -1,
-                            const int readUntilChar = -1,
-                            oneShotMs::timeType timeoutMs = oneShotMs::neverExpires /* neverExpires=>getTimeout() */);
+        size_t sendGeneric(Print* to,
+                          const ssize_t len = -1,
+                          const int readUntilChar = -1,
+                          oneShotMs::timeType timeoutMs = oneShotMs::neverExpires);
 
-        size_t sendGeneric (Stream* to,
-                            const ssize_t len = -1,
-                            const int readUntilChar = -1,
-                            oneShotMs::timeType timeoutMs = oneShotMs::neverExpires /* neverExpires=>getTimeout() */);
+        /**
+         * @brief Generic transfer method for Stream objects
+         * @param to Destination stream
+         * @param len Maximum number of bytes to transfer (-1 for unlimited)
+         * @param readUntilChar Character to stop at (-1 for none)
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
+        size_t sendGeneric(Stream* to,
+                          const ssize_t len = -1,
+                          const int readUntilChar = -1,
+                          oneShotMs::timeType timeoutMs = oneShotMs::neverExpires);
 
+        /**
+         * @brief Transfer using peek buffer API
+         * @param to Destination stream
+         * @param len Maximum number of bytes to transfer
+         * @param readUntilChar Character to stop at
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
         size_t SendGenericPeekBuffer(Print* to, const ssize_t len, const int readUntilChar, const oneShotMs::timeType timeoutMs);
+        
+        /**
+         * @brief Transfer using regular read until character
+         * @param to Destination stream
+         * @param len Maximum number of bytes to transfer
+         * @param readUntilChar Character to stop at
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
         size_t SendGenericRegularUntil(Print* to, const ssize_t len, const int readUntilChar, const oneShotMs::timeType timeoutMs);
+        
+        /**
+         * @brief Transfer using regular read
+         * @param to Destination stream
+         * @param len Maximum number of bytes to transfer
+         * @param timeoutMs Timeout in milliseconds
+         * @return Number of bytes transferred
+         */
         size_t SendGenericRegular(Print* to, const ssize_t len, const oneShotMs::timeType timeoutMs);
 
-        void setReport (Report report) { _sendReport = report; }
+        /**
+         * @brief Set the result of a send operation
+         * @param report Status code to set
+         */
+        void setReport(Report report) { _sendReport = report; }
 
     private:
-
+        /**
+         * @brief Status of the last send operation
+         */
         Report _sendReport = Report::Success;
 
-    //////////////////// end of extensions
-
     protected:
-        long parseInt(char skipChar); // as parseInt() but the given skipChar is ignored
-        // this allows format characters (typically commas) in values to be ignored
-
-        float parseFloat(char skipChar);  // as parseFloat() but the given skipChar is ignored
+        /**
+         * @brief Parse an integer with custom skip character
+         * @param skipChar Character to ignore during parsing
+         * @return The parsed integer value
+         */
+        long parseInt(char skipChar);
+        
+        /**
+         * @brief Parse a float with custom skip character
+         * @param skipChar Character to ignore during parsing
+         * @return The parsed float value
+         */
+        float parseFloat(char skipChar);
 };
 
 #endif

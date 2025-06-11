@@ -1,13 +1,6 @@
 var searchData=
 [
-  ['emplace_15',['emplace',['../classesp32__psram_1_1_vector_p_s_r_a_m.html#afaec1a40d8425e2768238129e135f10d',1,'esp32_psram::VectorPSRAM']]],
-  ['emplace_5fback_16',['emplace_back',['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a9a12d2360edbc424de88c887297edaec',1,'esp32_psram::VectorPSRAM']]],
-  ['empty_17',['empty',['../classesp32__psram_1_1_vector_h_i_m_e_m.html#ac1050e029a1b733148221d9afe5ec322',1,'esp32_psram::VectorHIMEM::empty()'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a227212d44cb5337796a97b9236268625',1,'esp32_psram::VectorPSRAM::empty() const noexcept']]],
-  ['end_18',['end',['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a57eb39687c30ccbb610aabe19aec4638',1,'esp32_psram::VectorPSRAM::end() noexcept'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a048f46eaccf63d37425cfee6a026238f',1,'esp32_psram::VectorPSRAM::end() const noexcept']]],
-  ['ensure_5fblock_5fmapped_19',['ensure_block_mapped',['../classesp32__psram_1_1_himem_block.html#a5d568e8b0d465414d27492d02e730f7a',1,'esp32_psram::HimemBlock']]],
-  ['erase_20',['erase',['../classesp32__psram_1_1_vector_h_i_m_e_m.html#af45b39901c0571468af942c8985ec1b1',1,'esp32_psram::VectorHIMEM::erase()'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a27791ca50de4f01d1f3f8fead8122fdf',1,'esp32_psram::VectorPSRAM::erase(const_iterator pos)'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a1f8dac96369748f7abbcb27b28bb69f1',1,'esp32_psram::VectorPSRAM::erase(const_iterator first, const_iterator last)']]],
-  ['esp32_2dpsram_20library_21',['ESP32-PSRAM Library',['../index.html',1,'']]],
-  ['esp32_2dpsram_2eh_22',['ESP32-PSRAM.h',['../_e_s_p32-_p_s_r_a_m_8h.html',1,'']]],
-  ['esp32_5fpsram_23',['esp32_psram',['../namespaceesp32__psram.html',1,'']]],
-  ['exists_24',['exists',['../classesp32__psram_1_1_h_i_m_e_m_class.html#ab68a478dbe9b9f80c9c1186a9cbb0875',1,'esp32_psram::HIMEMClass::exists()'],['../classesp32__psram_1_1_p_s_r_a_m_class.html#aa89ecf0ff9fe808df9f725ae3d622a89',1,'esp32_psram::PSRAMClass::exists()']]]
+  ['data_15',['data',['../classesp32__psram_1_1_vector_p_s_r_a_m.html#af53fa42bb64cba0e348d0d13e6c0b1ac',1,'esp32_psram::VectorPSRAM::data() noexcept'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a78a28046758bae53c40f92662648d34b',1,'esp32_psram::VectorPSRAM::data() const noexcept']]],
+  ['deallocate_16',['deallocate',['../classesp32__psram_1_1_p_s_r_a_m_allocator.html#a705667bec5ac26d99876e11b4799b63c',1,'esp32_psram::PSRAMAllocator']]],
+  ['deprecated_20list_17',['Deprecated List',['../deprecated.html',1,'']]]
 ];

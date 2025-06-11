@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['append_214',['APPEND',['../namespaceesp32__psram.html#a14f8cd52dc1860a6b5ec38c254e2ee67a375ffb668aa90f1c7fcae55e9734a752',1,'esp32_psram']]]
+  ['readerror_272',['ReadError',['../class_stream.html#a37c8a5527f741942d10ecd2a53c1f220adf9be6f7af7c3f7196c5c3e731de0a87',1,'Stream']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filemode_213',['FileMode',['../namespaceesp32__psram.html#a14f8cd52dc1860a6b5ec38c254e2ee67',1,'esp32_psram']]]
+  ['report_271',['Report',['../class_stream.html#a37c8a5527f741942d10ecd2a53c1f220',1,'Stream']]]
 ];

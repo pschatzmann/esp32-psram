@@ -69,175 +69,1872 @@ $(function() {
 <div class="title">Print Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base class that provides <a class="el" href="class_print.html#a76a52794e0f0f76334a083471389166d" title="Print a flash string.">print()</a> and <a class="el" href="class_print.html#a169b128f9e22f0c15883768f580541a2" title="Print just a newline.">println()</a> functionality.  
+ <a href="class_print.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_print_8h_source.html">Print.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Print:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_print.png" usemap="#Print_map" alt=""/>
   <map id="Print_map" name="Print_map">
-<area href="class_stream.html" alt="Stream" shape="rect" coords="146,56,428,80"/>
+<area href="class_stream.html" title="Base class for all character and binary stream operations." alt="Stream" shape="rect" coords="0,56,282,80"/>
 <area href="classesp32__psram_1_1_ring_buffer_stream.html" title="A circular buffer implementation that extends Arduino&#39;s Stream." alt="esp32_psram::RingBufferStream&lt; VectorType &gt;" shape="rect" coords="0,112,282,136"/>
-<area href="classesp32__psram_1_1_vector_file.html" alt="esp32_psram::VectorFile&lt; VectorType &gt;" shape="rect" coords="292,112,574,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae278602698f895c25820f18da4e765be"><td class="memItemLeft" align="right" valign="top"><a id="ae278602698f895c25820f18da4e765be"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>availableForWrite</b> ()</td></tr>
+<tr class="memitem:a1b9fe938883bb7b4bce8fba012dab112"><td class="memItemLeft" align="right" valign="top"><a id="a1b9fe938883bb7b4bce8fba012dab112"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a1b9fe938883bb7b4bce8fba012dab112">Print</a> ()</td></tr>
+<tr class="memdesc:a1b9fe938883bb7b4bce8fba012dab112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a1b9fe938883bb7b4bce8fba012dab112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae278602698f895c25820f18da4e765be"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#ae278602698f895c25820f18da4e765be">availableForWrite</a> ()</td></tr>
+<tr class="memdesc:ae278602698f895c25820f18da4e765be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of bytes available in the write buffer.  <a href="class_print.html#ae278602698f895c25820f18da4e765be">More...</a><br /></td></tr>
 <tr class="separator:ae278602698f895c25820f18da4e765be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec9ecf84cc6d9087a650def3cefc459e"><td class="memItemLeft" align="right" valign="top"><a id="aec9ecf84cc6d9087a650def3cefc459e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clearWriteError</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#aec9ecf84cc6d9087a650def3cefc459e">clearWriteError</a> ()</td></tr>
+<tr class="memdesc:aec9ecf84cc6d9087a650def3cefc459e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the write error state. <br /></td></tr>
 <tr class="separator:aec9ecf84cc6d9087a650def3cefc459e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add7f8450dfdc7f94eeec685f220573f7"><td class="memItemLeft" align="right" valign="top"><a id="add7f8450dfdc7f94eeec685f220573f7"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>flush</b> ()</td></tr>
+<tr class="memitem:add7f8450dfdc7f94eeec685f220573f7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#add7f8450dfdc7f94eeec685f220573f7">flush</a> ()</td></tr>
+<tr class="memdesc:add7f8450dfdc7f94eeec685f220573f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the output buffer.  <a href="class_print.html#add7f8450dfdc7f94eeec685f220573f7">More...</a><br /></td></tr>
 <tr class="separator:add7f8450dfdc7f94eeec685f220573f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88a4a829fb5d589efb43955ad0cbddcc"><td class="memItemLeft" align="right" valign="top"><a id="a88a4a829fb5d589efb43955ad0cbddcc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getWriteError</b> ()</td></tr>
+<tr class="memitem:a88a4a829fb5d589efb43955ad0cbddcc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a88a4a829fb5d589efb43955ad0cbddcc">getWriteError</a> ()</td></tr>
+<tr class="memdesc:a88a4a829fb5d589efb43955ad0cbddcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current write error state.  <a href="class_print.html#a88a4a829fb5d589efb43955ad0cbddcc">More...</a><br /></td></tr>
 <tr class="separator:a88a4a829fb5d589efb43955ad0cbddcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b5b3f0fbe6c2865771e8d8a1a9a42b2"><td class="memItemLeft" align="right" valign="top"><a id="a5b5b3f0fbe6c2865771e8d8a1a9a42b2"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>outputCanTimeout</b> ()</td></tr>
+<tr class="memitem:a5b5b3f0fbe6c2865771e8d8a1a9a42b2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a5b5b3f0fbe6c2865771e8d8a1a9a42b2">outputCanTimeout</a> ()</td></tr>
+<tr class="memdesc:a5b5b3f0fbe6c2865771e8d8a1a9a42b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the output can timeout.  <a href="class_print.html#a5b5b3f0fbe6c2865771e8d8a1a9a42b2">More...</a><br /></td></tr>
 <tr class="separator:a5b5b3f0fbe6c2865771e8d8a1a9a42b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e411d07a8ffec5faf7ce485bac0f029"><td class="memItemLeft" align="right" valign="top"><a id="a1e411d07a8ffec5faf7ce485bac0f029"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (char)</td></tr>
+<tr class="memitem:a1e411d07a8ffec5faf7ce485bac0f029"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a1e411d07a8ffec5faf7ce485bac0f029">print</a> (char)</td></tr>
+<tr class="memdesc:a1e411d07a8ffec5faf7ce485bac0f029"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a single character.  <a href="class_print.html#a1e411d07a8ffec5faf7ce485bac0f029">More...</a><br /></td></tr>
 <tr class="separator:a1e411d07a8ffec5faf7ce485bac0f029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76a52794e0f0f76334a083471389166d"><td class="memItemLeft" align="right" valign="top"><a id="a76a52794e0f0f76334a083471389166d"></a>
-size_t size_t size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (const __FlashStringHelper *)</td></tr>
+<tr class="memitem:a76a52794e0f0f76334a083471389166d"><td class="memItemLeft" align="right" valign="top">size_t size_t size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a76a52794e0f0f76334a083471389166d">print</a> (const __FlashStringHelper *)</td></tr>
+<tr class="memdesc:a76a52794e0f0f76334a083471389166d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a flash string.  <a href="class_print.html#a76a52794e0f0f76334a083471389166d">More...</a><br /></td></tr>
 <tr class="separator:a76a52794e0f0f76334a083471389166d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfe80773011eb17dfb52c2fba517a093"><td class="memItemLeft" align="right" valign="top"><a id="acfe80773011eb17dfb52c2fba517a093"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (const char[])</td></tr>
+<tr class="memitem:acfe80773011eb17dfb52c2fba517a093"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#acfe80773011eb17dfb52c2fba517a093">print</a> (const char[])</td></tr>
+<tr class="memdesc:acfe80773011eb17dfb52c2fba517a093"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a null-terminated string.  <a href="class_print.html#acfe80773011eb17dfb52c2fba517a093">More...</a><br /></td></tr>
 <tr class="separator:acfe80773011eb17dfb52c2fba517a093"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a901b0f06ae34aab31b8fbb4298f0596e"><td class="memItemLeft" align="right" valign="top"><a id="a901b0f06ae34aab31b8fbb4298f0596e"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (const Printable &amp;)</td></tr>
+<tr class="memitem:a901b0f06ae34aab31b8fbb4298f0596e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a901b0f06ae34aab31b8fbb4298f0596e">print</a> (const Printable &amp;)</td></tr>
+<tr class="memdesc:a901b0f06ae34aab31b8fbb4298f0596e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a Printable object.  <a href="class_print.html#a901b0f06ae34aab31b8fbb4298f0596e">More...</a><br /></td></tr>
 <tr class="separator:a901b0f06ae34aab31b8fbb4298f0596e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a157007ca7ea8334ba7eb4bc705740216"><td class="memItemLeft" align="right" valign="top"><a id="a157007ca7ea8334ba7eb4bc705740216"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (const String &amp;)</td></tr>
+<tr class="memitem:a157007ca7ea8334ba7eb4bc705740216"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a157007ca7ea8334ba7eb4bc705740216">print</a> (const String &amp;)</td></tr>
+<tr class="memdesc:a157007ca7ea8334ba7eb4bc705740216"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a String object.  <a href="class_print.html#a157007ca7ea8334ba7eb4bc705740216">More...</a><br /></td></tr>
 <tr class="separator:a157007ca7ea8334ba7eb4bc705740216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8b4c025786c820afe0a90aeea01c9c5"><td class="memItemLeft" align="right" valign="top"><a id="ae8b4c025786c820afe0a90aeea01c9c5"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (double, int=2)</td></tr>
+<tr class="memitem:ae8b4c025786c820afe0a90aeea01c9c5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#ae8b4c025786c820afe0a90aeea01c9c5">print</a> (double, int=2)</td></tr>
+<tr class="memdesc:ae8b4c025786c820afe0a90aeea01c9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a floating point value.  <a href="class_print.html#ae8b4c025786c820afe0a90aeea01c9c5">More...</a><br /></td></tr>
 <tr class="separator:ae8b4c025786c820afe0a90aeea01c9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32cb3cf32d701c797b2b2d1080052dfe"><td class="memItemLeft" align="right" valign="top"><a id="a32cb3cf32d701c797b2b2d1080052dfe"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (int, int=DEC)</td></tr>
+<tr class="memitem:a32cb3cf32d701c797b2b2d1080052dfe"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a32cb3cf32d701c797b2b2d1080052dfe">print</a> (int, int=DEC)</td></tr>
+<tr class="memdesc:a32cb3cf32d701c797b2b2d1080052dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an integer value.  <a href="class_print.html#a32cb3cf32d701c797b2b2d1080052dfe">More...</a><br /></td></tr>
 <tr class="separator:a32cb3cf32d701c797b2b2d1080052dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a669dd47fc762118a5a2052bf77d54dc8"><td class="memItemLeft" align="right" valign="top"><a id="a669dd47fc762118a5a2052bf77d54dc8"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (long long, int=DEC)</td></tr>
+<tr class="memitem:a669dd47fc762118a5a2052bf77d54dc8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a669dd47fc762118a5a2052bf77d54dc8">print</a> (long long, int=DEC)</td></tr>
+<tr class="memdesc:a669dd47fc762118a5a2052bf77d54dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a long long integer value.  <a href="class_print.html#a669dd47fc762118a5a2052bf77d54dc8">More...</a><br /></td></tr>
 <tr class="separator:a669dd47fc762118a5a2052bf77d54dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1fb2a2384c7b9f628943f5046e7d1c1"><td class="memItemLeft" align="right" valign="top"><a id="ab1fb2a2384c7b9f628943f5046e7d1c1"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (long, int=DEC)</td></tr>
+<tr class="memitem:ab1fb2a2384c7b9f628943f5046e7d1c1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#ab1fb2a2384c7b9f628943f5046e7d1c1">print</a> (long, int=DEC)</td></tr>
+<tr class="memdesc:ab1fb2a2384c7b9f628943f5046e7d1c1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a long integer value.  <a href="class_print.html#ab1fb2a2384c7b9f628943f5046e7d1c1">More...</a><br /></td></tr>
 <tr class="separator:ab1fb2a2384c7b9f628943f5046e7d1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97bd44df9222fa4a51a1266fab8d3bc1"><td class="memItemLeft" align="right" valign="top"><a id="a97bd44df9222fa4a51a1266fab8d3bc1"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (unsigned char, int=DEC)</td></tr>
+<tr class="memitem:a97bd44df9222fa4a51a1266fab8d3bc1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a97bd44df9222fa4a51a1266fab8d3bc1">print</a> (unsigned char, int=DEC)</td></tr>
+<tr class="memdesc:a97bd44df9222fa4a51a1266fab8d3bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned byte value.  <a href="class_print.html#a97bd44df9222fa4a51a1266fab8d3bc1">More...</a><br /></td></tr>
 <tr class="separator:a97bd44df9222fa4a51a1266fab8d3bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87275de35583868a370f43ce1c887750"><td class="memItemLeft" align="right" valign="top"><a id="a87275de35583868a370f43ce1c887750"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (unsigned int, int=DEC)</td></tr>
+<tr class="memitem:a87275de35583868a370f43ce1c887750"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a87275de35583868a370f43ce1c887750">print</a> (unsigned int, int=DEC)</td></tr>
+<tr class="memdesc:a87275de35583868a370f43ce1c887750"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned integer value.  <a href="class_print.html#a87275de35583868a370f43ce1c887750">More...</a><br /></td></tr>
 <tr class="separator:a87275de35583868a370f43ce1c887750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74a51acdc4faa11f63bc5302fb974844"><td class="memItemLeft" align="right" valign="top"><a id="a74a51acdc4faa11f63bc5302fb974844"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (unsigned long long, int=DEC)</td></tr>
+<tr class="memitem:a74a51acdc4faa11f63bc5302fb974844"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a74a51acdc4faa11f63bc5302fb974844">print</a> (unsigned long long, int=DEC)</td></tr>
+<tr class="memdesc:a74a51acdc4faa11f63bc5302fb974844"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned long long integer value.  <a href="class_print.html#a74a51acdc4faa11f63bc5302fb974844">More...</a><br /></td></tr>
 <tr class="separator:a74a51acdc4faa11f63bc5302fb974844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26a40be7a557c0bc391a15dce9f06954"><td class="memItemLeft" align="right" valign="top"><a id="a26a40be7a557c0bc391a15dce9f06954"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (unsigned long, int=DEC)</td></tr>
+<tr class="memitem:a26a40be7a557c0bc391a15dce9f06954"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a26a40be7a557c0bc391a15dce9f06954">print</a> (unsigned long, int=DEC)</td></tr>
+<tr class="memdesc:a26a40be7a557c0bc391a15dce9f06954"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned long integer value.  <a href="class_print.html#a26a40be7a557c0bc391a15dce9f06954">More...</a><br /></td></tr>
 <tr class="separator:a26a40be7a557c0bc391a15dce9f06954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaa1520ee061ba4206c28cb550e6bf44"><td class="memItemLeft" align="right" valign="top"><a id="aeaa1520ee061ba4206c28cb550e6bf44"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>printf</b> (const char *format,...) __attribute__((format(printf</td></tr>
+<tr class="memitem:aeaa1520ee061ba4206c28cb550e6bf44"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#aeaa1520ee061ba4206c28cb550e6bf44">printf</a> (const char *format,...) __attribute__((format(printf</td></tr>
+<tr class="memdesc:aeaa1520ee061ba4206c28cb550e6bf44"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> formatted data (printf style)  <a href="class_print.html#aeaa1520ee061ba4206c28cb550e6bf44">More...</a><br /></td></tr>
 <tr class="separator:aeaa1520ee061ba4206c28cb550e6bf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9758fe0b8c96d7061960c6d4c15e681e"><td class="memItemLeft" align="right" valign="top"><a id="a9758fe0b8c96d7061960c6d4c15e681e"></a>
-size_t size_t&#160;</td><td class="memItemRight" valign="bottom"><b>printf_P</b> (PGM_P format,...) __attribute__((format(printf</td></tr>
+<tr class="memitem:a9758fe0b8c96d7061960c6d4c15e681e"><td class="memItemLeft" align="right" valign="top">size_t size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a9758fe0b8c96d7061960c6d4c15e681e">printf_P</a> (PGM_P format,...) __attribute__((format(<a class="el" href="class_print.html#aeaa1520ee061ba4206c28cb550e6bf44">printf</a></td></tr>
+<tr class="memdesc:a9758fe0b8c96d7061960c6d4c15e681e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> formatted data from program memory (printf style)  <a href="class_print.html#a9758fe0b8c96d7061960c6d4c15e681e">More...</a><br /></td></tr>
 <tr class="separator:a9758fe0b8c96d7061960c6d4c15e681e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a554896a71162f967b5794401239d7a01"><td class="memItemLeft" align="right" valign="top"><a id="a554896a71162f967b5794401239d7a01"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (char)</td></tr>
+<tr class="memitem:a554896a71162f967b5794401239d7a01"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a554896a71162f967b5794401239d7a01">println</a> (char)</td></tr>
+<tr class="memdesc:a554896a71162f967b5794401239d7a01"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a single character followed by a newline.  <a href="class_print.html#a554896a71162f967b5794401239d7a01">More...</a><br /></td></tr>
 <tr class="separator:a554896a71162f967b5794401239d7a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fd286b325d3b1a786cfa35072a8ef52"><td class="memItemLeft" align="right" valign="top"><a id="a4fd286b325d3b1a786cfa35072a8ef52"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (const __FlashStringHelper *)</td></tr>
+<tr class="memitem:a4fd286b325d3b1a786cfa35072a8ef52"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a4fd286b325d3b1a786cfa35072a8ef52">println</a> (const __FlashStringHelper *)</td></tr>
+<tr class="memdesc:a4fd286b325d3b1a786cfa35072a8ef52"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a flash string followed by a newline.  <a href="class_print.html#a4fd286b325d3b1a786cfa35072a8ef52">More...</a><br /></td></tr>
 <tr class="separator:a4fd286b325d3b1a786cfa35072a8ef52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad337ce3f7977411b7d34d47a51e5737e"><td class="memItemLeft" align="right" valign="top"><a id="ad337ce3f7977411b7d34d47a51e5737e"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (const char[])</td></tr>
+<tr class="memitem:ad337ce3f7977411b7d34d47a51e5737e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#ad337ce3f7977411b7d34d47a51e5737e">println</a> (const char[])</td></tr>
+<tr class="memdesc:ad337ce3f7977411b7d34d47a51e5737e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a null-terminated string followed by a newline.  <a href="class_print.html#ad337ce3f7977411b7d34d47a51e5737e">More...</a><br /></td></tr>
 <tr class="separator:ad337ce3f7977411b7d34d47a51e5737e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20f9e104153b62e720c9b4c348b44f00"><td class="memItemLeft" align="right" valign="top"><a id="a20f9e104153b62e720c9b4c348b44f00"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (const Printable &amp;)</td></tr>
+<tr class="memitem:a20f9e104153b62e720c9b4c348b44f00"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a20f9e104153b62e720c9b4c348b44f00">println</a> (const Printable &amp;)</td></tr>
+<tr class="memdesc:a20f9e104153b62e720c9b4c348b44f00"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a Printable object followed by a newline.  <a href="class_print.html#a20f9e104153b62e720c9b4c348b44f00">More...</a><br /></td></tr>
 <tr class="separator:a20f9e104153b62e720c9b4c348b44f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd6cc6e2c1163f94c60855ad233899bd"><td class="memItemLeft" align="right" valign="top"><a id="afd6cc6e2c1163f94c60855ad233899bd"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (const String &amp;s)</td></tr>
+<tr class="memitem:afd6cc6e2c1163f94c60855ad233899bd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#afd6cc6e2c1163f94c60855ad233899bd">println</a> (const String &amp;s)</td></tr>
+<tr class="memdesc:afd6cc6e2c1163f94c60855ad233899bd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a String object followed by a newline.  <a href="class_print.html#afd6cc6e2c1163f94c60855ad233899bd">More...</a><br /></td></tr>
 <tr class="separator:afd6cc6e2c1163f94c60855ad233899bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56e976b079361b6021ef7c2bedb397a2"><td class="memItemLeft" align="right" valign="top"><a id="a56e976b079361b6021ef7c2bedb397a2"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (double, int=2)</td></tr>
+<tr class="memitem:a56e976b079361b6021ef7c2bedb397a2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a56e976b079361b6021ef7c2bedb397a2">println</a> (double, int=2)</td></tr>
+<tr class="memdesc:a56e976b079361b6021ef7c2bedb397a2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a floating point value followed by a newline.  <a href="class_print.html#a56e976b079361b6021ef7c2bedb397a2">More...</a><br /></td></tr>
 <tr class="separator:a56e976b079361b6021ef7c2bedb397a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a738c88471cfb8eac7c8a804699971413"><td class="memItemLeft" align="right" valign="top"><a id="a738c88471cfb8eac7c8a804699971413"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (int, int=DEC)</td></tr>
+<tr class="memitem:a738c88471cfb8eac7c8a804699971413"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a738c88471cfb8eac7c8a804699971413">println</a> (int, int=DEC)</td></tr>
+<tr class="memdesc:a738c88471cfb8eac7c8a804699971413"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an integer value followed by a newline.  <a href="class_print.html#a738c88471cfb8eac7c8a804699971413">More...</a><br /></td></tr>
 <tr class="separator:a738c88471cfb8eac7c8a804699971413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d0a0f3da98e9401d25b959b726e94ac"><td class="memItemLeft" align="right" valign="top"><a id="a3d0a0f3da98e9401d25b959b726e94ac"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (long long, int=DEC)</td></tr>
+<tr class="memitem:a3d0a0f3da98e9401d25b959b726e94ac"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a3d0a0f3da98e9401d25b959b726e94ac">println</a> (long long, int=DEC)</td></tr>
+<tr class="memdesc:a3d0a0f3da98e9401d25b959b726e94ac"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a long long integer value followed by a newline.  <a href="class_print.html#a3d0a0f3da98e9401d25b959b726e94ac">More...</a><br /></td></tr>
 <tr class="separator:a3d0a0f3da98e9401d25b959b726e94ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a833fbec3ceba92e3ec95f51e026e4569"><td class="memItemLeft" align="right" valign="top"><a id="a833fbec3ceba92e3ec95f51e026e4569"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (long, int=DEC)</td></tr>
+<tr class="memitem:a833fbec3ceba92e3ec95f51e026e4569"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a833fbec3ceba92e3ec95f51e026e4569">println</a> (long, int=DEC)</td></tr>
+<tr class="memdesc:a833fbec3ceba92e3ec95f51e026e4569"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a long integer value followed by a newline.  <a href="class_print.html#a833fbec3ceba92e3ec95f51e026e4569">More...</a><br /></td></tr>
 <tr class="separator:a833fbec3ceba92e3ec95f51e026e4569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9afe80f50f0118d735295aec7727e50"><td class="memItemLeft" align="right" valign="top"><a id="ac9afe80f50f0118d735295aec7727e50"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (unsigned char, int=DEC)</td></tr>
+<tr class="memitem:ac9afe80f50f0118d735295aec7727e50"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#ac9afe80f50f0118d735295aec7727e50">println</a> (unsigned char, int=DEC)</td></tr>
+<tr class="memdesc:ac9afe80f50f0118d735295aec7727e50"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned byte value followed by a newline.  <a href="class_print.html#ac9afe80f50f0118d735295aec7727e50">More...</a><br /></td></tr>
 <tr class="separator:ac9afe80f50f0118d735295aec7727e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac87eed1fcb78641169ba2244278c899e"><td class="memItemLeft" align="right" valign="top"><a id="ac87eed1fcb78641169ba2244278c899e"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (unsigned int, int=DEC)</td></tr>
+<tr class="memitem:ac87eed1fcb78641169ba2244278c899e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#ac87eed1fcb78641169ba2244278c899e">println</a> (unsigned int, int=DEC)</td></tr>
+<tr class="memdesc:ac87eed1fcb78641169ba2244278c899e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned integer value followed by a newline.  <a href="class_print.html#ac87eed1fcb78641169ba2244278c899e">More...</a><br /></td></tr>
 <tr class="separator:ac87eed1fcb78641169ba2244278c899e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3b823d47192f2c87b54f485ee1a3617"><td class="memItemLeft" align="right" valign="top"><a id="ab3b823d47192f2c87b54f485ee1a3617"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (unsigned long long, int=DEC)</td></tr>
+<tr class="memitem:ab3b823d47192f2c87b54f485ee1a3617"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#ab3b823d47192f2c87b54f485ee1a3617">println</a> (unsigned long long, int=DEC)</td></tr>
+<tr class="memdesc:ab3b823d47192f2c87b54f485ee1a3617"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned long long integer value followed by a newline.  <a href="class_print.html#ab3b823d47192f2c87b54f485ee1a3617">More...</a><br /></td></tr>
 <tr class="separator:ab3b823d47192f2c87b54f485ee1a3617"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebee3c33ee5d8f10b6f378d5273742d0"><td class="memItemLeft" align="right" valign="top"><a id="aebee3c33ee5d8f10b6f378d5273742d0"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (unsigned long, int=DEC)</td></tr>
+<tr class="memitem:aebee3c33ee5d8f10b6f378d5273742d0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#aebee3c33ee5d8f10b6f378d5273742d0">println</a> (unsigned long, int=DEC)</td></tr>
+<tr class="memdesc:aebee3c33ee5d8f10b6f378d5273742d0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned long integer value followed by a newline.  <a href="class_print.html#aebee3c33ee5d8f10b6f378d5273742d0">More...</a><br /></td></tr>
 <tr class="separator:aebee3c33ee5d8f10b6f378d5273742d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a169b128f9e22f0c15883768f580541a2"><td class="memItemLeft" align="right" valign="top"><a id="a169b128f9e22f0c15883768f580541a2"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>println</b> (void)</td></tr>
+<tr class="memitem:a169b128f9e22f0c15883768f580541a2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a169b128f9e22f0c15883768f580541a2">println</a> (void)</td></tr>
+<tr class="memdesc:a169b128f9e22f0c15883768f580541a2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> just a newline.  <a href="class_print.html#a169b128f9e22f0c15883768f580541a2">More...</a><br /></td></tr>
 <tr class="separator:a169b128f9e22f0c15883768f580541a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d2a9d456c0cd7f40dceb7616b382e92"><td class="memItemLeft" align="right" valign="top"><a id="a8d2a9d456c0cd7f40dceb7616b382e92"></a>
-template&lt;&gt; </td></tr>
-<tr class="memitem:a8d2a9d456c0cd7f40dceb7616b382e92"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><b>printNumber</b> (double number, uint8_t digits)</td></tr>
+<tr class="memitem:a8d2a9d456c0cd7f40dceb7616b382e92"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:a8d2a9d456c0cd7f40dceb7616b382e92"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_print.html#a8d2a9d456c0cd7f40dceb7616b382e92">printNumber</a> (double number, uint8_t digits)</td></tr>
+<tr class="memdesc:a8d2a9d456c0cd7f40dceb7616b382e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialized template for printing floating point numbers.  <a href="class_print.html#a8d2a9d456c0cd7f40dceb7616b382e92">More...</a><br /></td></tr>
 <tr class="separator:a8d2a9d456c0cd7f40dceb7616b382e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d81dcb00d32e6b7c2ae09daaf2272f2"><td class="memItemLeft" align="right" valign="top"><a id="a6d81dcb00d32e6b7c2ae09daaf2272f2"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (char c)</td></tr>
+<tr class="memitem:a6d81dcb00d32e6b7c2ae09daaf2272f2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a6d81dcb00d32e6b7c2ae09daaf2272f2">write</a> (char c)</td></tr>
+<tr class="memdesc:a6d81dcb00d32e6b7c2ae09daaf2272f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a char value as a byte.  <a href="class_print.html#a6d81dcb00d32e6b7c2ae09daaf2272f2">More...</a><br /></td></tr>
 <tr class="separator:a6d81dcb00d32e6b7c2ae09daaf2272f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfdd93a61c4b95a3ba41680188505e73"><td class="memItemLeft" align="right" valign="top"><a id="abfdd93a61c4b95a3ba41680188505e73"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const char *buffer, size_t size)</td></tr>
+<tr class="memitem:abfdd93a61c4b95a3ba41680188505e73"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#abfdd93a61c4b95a3ba41680188505e73">write</a> (const char *buffer, size_t size)</td></tr>
+<tr class="memdesc:abfdd93a61c4b95a3ba41680188505e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a buffer of characters to the output.  <a href="class_print.html#abfdd93a61c4b95a3ba41680188505e73">More...</a><br /></td></tr>
 <tr class="separator:abfdd93a61c4b95a3ba41680188505e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b40e0e9cab1f2fe5bb0cb22ffe5adda"><td class="memItemLeft" align="right" valign="top"><a id="a5b40e0e9cab1f2fe5bb0cb22ffe5adda"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const char *str)</td></tr>
+<tr class="memitem:a5b40e0e9cab1f2fe5bb0cb22ffe5adda"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a5b40e0e9cab1f2fe5bb0cb22ffe5adda">write</a> (const char *str)</td></tr>
+<tr class="memdesc:a5b40e0e9cab1f2fe5bb0cb22ffe5adda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a null-terminated string to the output.  <a href="class_print.html#a5b40e0e9cab1f2fe5bb0cb22ffe5adda">More...</a><br /></td></tr>
 <tr class="separator:a5b40e0e9cab1f2fe5bb0cb22ffe5adda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88864e109589a5be9b0f5ba1327f8421"><td class="memItemLeft" align="right" valign="top"><a id="a88864e109589a5be9b0f5ba1327f8421"></a>
-virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const uint8_t *buffer, size_t size)</td></tr>
+<tr class="memitem:a88864e109589a5be9b0f5ba1327f8421"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a88864e109589a5be9b0f5ba1327f8421">write</a> (const uint8_t *buffer, size_t size)</td></tr>
+<tr class="memdesc:a88864e109589a5be9b0f5ba1327f8421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a buffer of bytes to the output.  <a href="class_print.html#a88864e109589a5be9b0f5ba1327f8421">More...</a><br /></td></tr>
 <tr class="separator:a88864e109589a5be9b0f5ba1327f8421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a389bb7fce7168bf37e63c49c27cfe9"><td class="memItemLeft" align="right" valign="top"><a id="a0a389bb7fce7168bf37e63c49c27cfe9"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (int t)</td></tr>
+<tr class="memitem:a0a389bb7fce7168bf37e63c49c27cfe9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a0a389bb7fce7168bf37e63c49c27cfe9">write</a> (int t)</td></tr>
+<tr class="memdesc:a0a389bb7fce7168bf37e63c49c27cfe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an int value as a byte.  <a href="class_print.html#a0a389bb7fce7168bf37e63c49c27cfe9">More...</a><br /></td></tr>
 <tr class="separator:a0a389bb7fce7168bf37e63c49c27cfe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af96640ee44175c34f4a705c5307cb92b"><td class="memItemLeft" align="right" valign="top"><a id="af96640ee44175c34f4a705c5307cb92b"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (int8_t c)</td></tr>
+<tr class="memitem:af96640ee44175c34f4a705c5307cb92b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#af96640ee44175c34f4a705c5307cb92b">write</a> (int8_t c)</td></tr>
+<tr class="memdesc:af96640ee44175c34f4a705c5307cb92b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a signed byte as an unsigned byte.  <a href="class_print.html#af96640ee44175c34f4a705c5307cb92b">More...</a><br /></td></tr>
 <tr class="separator:af96640ee44175c34f4a705c5307cb92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1956085b34034b3ea9e72ccbfc47710d"><td class="memItemLeft" align="right" valign="top"><a id="a1956085b34034b3ea9e72ccbfc47710d"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (long long t)</td></tr>
+<tr class="memitem:a1956085b34034b3ea9e72ccbfc47710d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a1956085b34034b3ea9e72ccbfc47710d">write</a> (long long t)</td></tr>
+<tr class="memdesc:a1956085b34034b3ea9e72ccbfc47710d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a long long value as a byte.  <a href="class_print.html#a1956085b34034b3ea9e72ccbfc47710d">More...</a><br /></td></tr>
 <tr class="separator:a1956085b34034b3ea9e72ccbfc47710d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bb46b2516c9d3c9352c21afd4c32d3b"><td class="memItemLeft" align="right" valign="top"><a id="a9bb46b2516c9d3c9352c21afd4c32d3b"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (long t)</td></tr>
+<tr class="memitem:a9bb46b2516c9d3c9352c21afd4c32d3b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a9bb46b2516c9d3c9352c21afd4c32d3b">write</a> (long t)</td></tr>
+<tr class="memdesc:a9bb46b2516c9d3c9352c21afd4c32d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a long value as a byte.  <a href="class_print.html#a9bb46b2516c9d3c9352c21afd4c32d3b">More...</a><br /></td></tr>
 <tr class="separator:a9bb46b2516c9d3c9352c21afd4c32d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa07d80c5b097ccf418b51ea1368669e5"><td class="memItemLeft" align="right" valign="top"><a id="aa07d80c5b097ccf418b51ea1368669e5"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (short t)</td></tr>
+<tr class="memitem:aa07d80c5b097ccf418b51ea1368669e5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#aa07d80c5b097ccf418b51ea1368669e5">write</a> (short t)</td></tr>
+<tr class="memdesc:aa07d80c5b097ccf418b51ea1368669e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a short value as a byte.  <a href="class_print.html#aa07d80c5b097ccf418b51ea1368669e5">More...</a><br /></td></tr>
 <tr class="separator:aa07d80c5b097ccf418b51ea1368669e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5be30d49adae2406a270c29ba9a3e0a3"><td class="memItemLeft" align="right" valign="top"><a id="a5be30d49adae2406a270c29ba9a3e0a3"></a>
-virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (uint8_t)=0</td></tr>
+<tr class="memitem:a5be30d49adae2406a270c29ba9a3e0a3"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a5be30d49adae2406a270c29ba9a3e0a3">write</a> (uint8_t)=0</td></tr>
+<tr class="memdesc:a5be30d49adae2406a270c29ba9a3e0a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a single byte to the output.  <a href="class_print.html#a5be30d49adae2406a270c29ba9a3e0a3">More...</a><br /></td></tr>
 <tr class="separator:a5be30d49adae2406a270c29ba9a3e0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fd469e823417e03b6b3aea8e459a412"><td class="memItemLeft" align="right" valign="top"><a id="a3fd469e823417e03b6b3aea8e459a412"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (unsigned int t)</td></tr>
+<tr class="memitem:a3fd469e823417e03b6b3aea8e459a412"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a3fd469e823417e03b6b3aea8e459a412">write</a> (unsigned int t)</td></tr>
+<tr class="memdesc:a3fd469e823417e03b6b3aea8e459a412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an unsigned int value as a byte.  <a href="class_print.html#a3fd469e823417e03b6b3aea8e459a412">More...</a><br /></td></tr>
 <tr class="separator:a3fd469e823417e03b6b3aea8e459a412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99f637f307349f22fdc2b6b1c78e3c2b"><td class="memItemLeft" align="right" valign="top"><a id="a99f637f307349f22fdc2b6b1c78e3c2b"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (unsigned long long t)</td></tr>
+<tr class="memitem:a99f637f307349f22fdc2b6b1c78e3c2b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a99f637f307349f22fdc2b6b1c78e3c2b">write</a> (unsigned long long t)</td></tr>
+<tr class="memdesc:a99f637f307349f22fdc2b6b1c78e3c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an unsigned long long value as a byte.  <a href="class_print.html#a99f637f307349f22fdc2b6b1c78e3c2b">More...</a><br /></td></tr>
 <tr class="separator:a99f637f307349f22fdc2b6b1c78e3c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c20dfd3ea0c6636cc215d47f22ca03a"><td class="memItemLeft" align="right" valign="top"><a id="a5c20dfd3ea0c6636cc215d47f22ca03a"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (unsigned long t)</td></tr>
+<tr class="memitem:a5c20dfd3ea0c6636cc215d47f22ca03a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a5c20dfd3ea0c6636cc215d47f22ca03a">write</a> (unsigned long t)</td></tr>
+<tr class="memdesc:a5c20dfd3ea0c6636cc215d47f22ca03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an unsigned long value as a byte.  <a href="class_print.html#a5c20dfd3ea0c6636cc215d47f22ca03a">More...</a><br /></td></tr>
 <tr class="separator:a5c20dfd3ea0c6636cc215d47f22ca03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a100498966cf02a95026b41c6b0e5c8dc"><td class="memItemLeft" align="right" valign="top"><a id="a100498966cf02a95026b41c6b0e5c8dc"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (unsigned short t)</td></tr>
+<tr class="memitem:a100498966cf02a95026b41c6b0e5c8dc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a100498966cf02a95026b41c6b0e5c8dc">write</a> (unsigned short t)</td></tr>
+<tr class="memdesc:a100498966cf02a95026b41c6b0e5c8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an unsigned short value as a byte.  <a href="class_print.html#a100498966cf02a95026b41c6b0e5c8dc">More...</a><br /></td></tr>
 <tr class="separator:a100498966cf02a95026b41c6b0e5c8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a46656410e23c0ec14d7a01b38b3b6f00"><td class="memItemLeft" align="right" valign="top"><a id="a46656410e23c0ec14d7a01b38b3b6f00"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setWriteError</b> (int err=1)</td></tr>
+<tr class="memitem:a46656410e23c0ec14d7a01b38b3b6f00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_print.html#a46656410e23c0ec14d7a01b38b3b6f00">setWriteError</a> (int err=1)</td></tr>
+<tr class="memdesc:a46656410e23c0ec14d7a01b38b3b6f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the write error flag.  <a href="class_print.html#a46656410e23c0ec14d7a01b38b3b6f00">More...</a><br /></td></tr>
 <tr class="separator:a46656410e23c0ec14d7a01b38b3b6f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class that provides <a class="el" href="class_print.html#a76a52794e0f0f76334a083471389166d" title="Print a flash string.">print()</a> and <a class="el" href="class_print.html#a169b128f9e22f0c15883768f580541a2" title="Print just a newline.">println()</a> functionality. </p>
+<p>The <a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> class is the base class for all Arduino objects that can write output, including Serial, Ethernet clients, and File objects. It provides a common interface for printing various data types to these output destinations. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae278602698f895c25820f18da4e765be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae278602698f895c25820f18da4e765be">&#9670;&nbsp;</a></span>availableForWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Print::availableForWrite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of bytes available in the write buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes available in the write buffer (0 by default) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Subclasses should override this if they implement buffering </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#abcdaaff2c51d46bd6b62b1acb38ac7bf">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>.</p>
+
+</div>
+</div>
+<a id="add7f8450dfdc7f94eeec685f220573f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add7f8450dfdc7f94eeec685f220573f7">&#9670;&nbsp;</a></span>flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Print::flush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flush the output buffer. </p>
+<p>This function should wait for all outgoing characters to be sent. The output buffer should be empty after this call. Empty implementation by default in <a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> class. </p>
+
+<p>Reimplemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#a18fc0be9683023daed330764ec28a41f">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a88a4a829fb5d589efb43955ad0cbddcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88a4a829fb5d589efb43955ad0cbddcc">&#9670;&nbsp;</a></span>getWriteError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Print::getWriteError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current write error state. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current error code (0 = no error) </dd></dl>
+
+</div>
+</div>
+<a id="a5b5b3f0fbe6c2865771e8d8a1a9a42b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b5b3f0fbe6c2865771e8d8a1a9a42b2">&#9670;&nbsp;</a></span>outputCanTimeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Print::outputCanTimeout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the output can timeout. </p>
+<p>By default, write operations can timeout (like for network or serial). Child classes can override this to false (like String).</p>
+<dl class="section return"><dt>Returns</dt><dd>true if output operations can timeout, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a1e411d07a8ffec5faf7ce485bac0f029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e411d07a8ffec5faf7ce485bac0f029">&#9670;&nbsp;</a></span>print() <span class="overload">[1/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a single character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Character to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a76a52794e0f0f76334a083471389166d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a52794e0f0f76334a083471389166d">&#9670;&nbsp;</a></span>print() <span class="overload">[2/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t size_t size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">const __FlashStringHelper *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a flash string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Flash string to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="acfe80773011eb17dfb52c2fba517a093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe80773011eb17dfb52c2fba517a093">&#9670;&nbsp;</a></span>print() <span class="overload">[3/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname">[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a null-terminated string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a901b0f06ae34aab31b8fbb4298f0596e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a901b0f06ae34aab31b8fbb4298f0596e">&#9670;&nbsp;</a></span>print() <span class="overload">[4/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">const Printable &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a Printable object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Object to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a157007ca7ea8334ba7eb4bc705740216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a157007ca7ea8334ba7eb4bc705740216">&#9670;&nbsp;</a></span>print() <span class="overload">[5/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a String object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>String to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="ae8b4c025786c820afe0a90aeea01c9c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b4c025786c820afe0a90aeea01c9c5">&#9670;&nbsp;</a></span>print() <span class="overload">[6/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>2</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a floating point value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">digits</td><td>Number of decimal places to display (default: 2) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a32cb3cf32d701c797b2b2d1080052dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32cb3cf32d701c797b2b2d1080052dfe">&#9670;&nbsp;</a></span>print() <span class="overload">[7/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an integer value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a669dd47fc762118a5a2052bf77d54dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a669dd47fc762118a5a2052bf77d54dc8">&#9670;&nbsp;</a></span>print() <span class="overload">[8/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a long long integer value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="ab1fb2a2384c7b9f628943f5046e7d1c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1fb2a2384c7b9f628943f5046e7d1c1">&#9670;&nbsp;</a></span>print() <span class="overload">[9/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a long integer value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a97bd44df9222fa4a51a1266fab8d3bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97bd44df9222fa4a51a1266fab8d3bc1">&#9670;&nbsp;</a></span>print() <span class="overload">[10/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned byte value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a87275de35583868a370f43ce1c887750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87275de35583868a370f43ce1c887750">&#9670;&nbsp;</a></span>print() <span class="overload">[11/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned integer value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a74a51acdc4faa11f63bc5302fb974844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74a51acdc4faa11f63bc5302fb974844">&#9670;&nbsp;</a></span>print() <span class="overload">[12/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned long long integer value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a26a40be7a557c0bc391a15dce9f06954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a40be7a557c0bc391a15dce9f06954">&#9670;&nbsp;</a></span>print() <span class="overload">[13/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::print </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned long integer value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="aeaa1520ee061ba4206c28cb550e6bf44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa1520ee061ba4206c28cb550e6bf44">&#9670;&nbsp;</a></span>printf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::printf </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> formatted data (printf style) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format string </td></tr>
+    <tr><td class="paramname">...</td><td>Variable arguments for format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a9758fe0b8c96d7061960c6d4c15e681e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9758fe0b8c96d7061960c6d4c15e681e">&#9670;&nbsp;</a></span>printf_P()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t size_t Print::printf_P </td>
+          <td>(</td>
+          <td class="paramtype">PGM_P&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> formatted data from program memory (printf style) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format string in program memory </td></tr>
+    <tr><td class="paramname">...</td><td>Variable arguments for format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a554896a71162f967b5794401239d7a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a554896a71162f967b5794401239d7a01">&#9670;&nbsp;</a></span>println() <span class="overload">[1/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a single character followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Character to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a4fd286b325d3b1a786cfa35072a8ef52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd286b325d3b1a786cfa35072a8ef52">&#9670;&nbsp;</a></span>println() <span class="overload">[2/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">const __FlashStringHelper *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a flash string followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Flash string to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="ad337ce3f7977411b7d34d47a51e5737e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad337ce3f7977411b7d34d47a51e5737e">&#9670;&nbsp;</a></span>println() <span class="overload">[3/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname">[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a null-terminated string followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a20f9e104153b62e720c9b4c348b44f00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f9e104153b62e720c9b4c348b44f00">&#9670;&nbsp;</a></span>println() <span class="overload">[4/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">const Printable &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a Printable object followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Object to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="afd6cc6e2c1163f94c60855ad233899bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd6cc6e2c1163f94c60855ad233899bd">&#9670;&nbsp;</a></span>println() <span class="overload">[5/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a String object followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>String to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a56e976b079361b6021ef7c2bedb397a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56e976b079361b6021ef7c2bedb397a2">&#9670;&nbsp;</a></span>println() <span class="overload">[6/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>2</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a floating point value followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">digits</td><td>Number of decimal places to display (default: 2) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a738c88471cfb8eac7c8a804699971413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a738c88471cfb8eac7c8a804699971413">&#9670;&nbsp;</a></span>println() <span class="overload">[7/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an integer value followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a3d0a0f3da98e9401d25b959b726e94ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d0a0f3da98e9401d25b959b726e94ac">&#9670;&nbsp;</a></span>println() <span class="overload">[8/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a long long integer value followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a833fbec3ceba92e3ec95f51e026e4569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a833fbec3ceba92e3ec95f51e026e4569">&#9670;&nbsp;</a></span>println() <span class="overload">[9/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> a long integer value followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="ac9afe80f50f0118d735295aec7727e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9afe80f50f0118d735295aec7727e50">&#9670;&nbsp;</a></span>println() <span class="overload">[10/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned byte value followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="ac87eed1fcb78641169ba2244278c899e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87eed1fcb78641169ba2244278c899e">&#9670;&nbsp;</a></span>println() <span class="overload">[11/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned integer value followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="ab3b823d47192f2c87b54f485ee1a3617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b823d47192f2c87b54f485ee1a3617">&#9670;&nbsp;</a></span>println() <span class="overload">[12/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned long long integer value followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="aebee3c33ee5d8f10b6f378d5273742d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebee3c33ee5d8f10b6f378d5273742d0">&#9670;&nbsp;</a></span>println() <span class="overload">[13/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"> = <code>DEC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> an unsigned long integer value followed by a newline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Value to print </td></tr>
+    <tr><td class="paramname">base</td><td>Number base to use (default: DEC) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a169b128f9e22f0c15883768f580541a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169b128f9e22f0c15883768f580541a2">&#9670;&nbsp;</a></span>println() <span class="overload">[14/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::println </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_print.html" title="Base class that provides print() and println() functionality.">Print</a> just a newline. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a8d2a9d456c0cd7f40dceb7616b382e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d2a9d456c0cd7f40dceb7616b382e92">&#9670;&nbsp;</a></span>printNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::printNumber </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>digits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specialized template for printing floating point numbers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>The floating point number to print </td></tr>
+    <tr><td class="paramname">digits</td><td>The number of decimal places to display </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a46656410e23c0ec14d7a01b38b3b6f00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46656410e23c0ec14d7a01b38b3b6f00">&#9670;&nbsp;</a></span>setWriteError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Print::setWriteError </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>err</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the write error flag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">err</td><td>Error code to set (default: 1) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6d81dcb00d32e6b7c2ae09daaf2272f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d81dcb00d32e6b7c2ae09daaf2272f2">&#9670;&nbsp;</a></span>write() <span class="overload">[1/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a char value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Character to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="abfdd93a61c4b95a3ba41680188505e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfdd93a61c4b95a3ba41680188505e73">&#9670;&nbsp;</a></span>write() <span class="overload">[2/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a buffer of characters to the output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Pointer to the character buffer </td></tr>
+    <tr><td class="paramname">size</td><td>Number of characters to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a5b40e0e9cab1f2fe5bb0cb22ffe5adda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b40e0e9cab1f2fe5bb0cb22ffe5adda">&#9670;&nbsp;</a></span>write() <span class="overload">[3/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a null-terminated string to the output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Pointer to the string to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a88864e109589a5be9b0f5ba1327f8421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88864e109589a5be9b0f5ba1327f8421">&#9670;&nbsp;</a></span>write() <span class="overload">[4/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a buffer of bytes to the output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Pointer to the data to write </td></tr>
+    <tr><td class="paramname">size</td><td>Number of bytes to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#ab07072c3572c1beb13e1632ee1777387">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a0a389bb7fce7168bf37e63c49c27cfe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a389bb7fce7168bf37e63c49c27cfe9">&#9670;&nbsp;</a></span>write() <span class="overload">[5/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write an int value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Value to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="af96640ee44175c34f4a705c5307cb92b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96640ee44175c34f4a705c5307cb92b">&#9670;&nbsp;</a></span>write() <span class="overload">[6/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a signed byte as an unsigned byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Byte to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a1956085b34034b3ea9e72ccbfc47710d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1956085b34034b3ea9e72ccbfc47710d">&#9670;&nbsp;</a></span>write() <span class="overload">[7/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a long long value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Value to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a9bb46b2516c9d3c9352c21afd4c32d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb46b2516c9d3c9352c21afd4c32d3b">&#9670;&nbsp;</a></span>write() <span class="overload">[8/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a long value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Value to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="aa07d80c5b097ccf418b51ea1368669e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07d80c5b097ccf418b51ea1368669e5">&#9670;&nbsp;</a></span>write() <span class="overload">[9/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">short&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a short value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Value to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a5be30d49adae2406a270c29ba9a3e0a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be30d49adae2406a270c29ba9a3e0a3">&#9670;&nbsp;</a></span>write() <span class="overload">[10/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a single byte to the output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>The byte to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written (1 on success, 0 on failure) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a pure virtual function that must be implemented by subclasses </dd></dl>
+
+<p>Implemented in <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html#a5d1a671a977590083b26095a775e712b">esp32_psram::RingBufferStream&lt; VectorType &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a3fd469e823417e03b6b3aea8e459a412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fd469e823417e03b6b3aea8e459a412">&#9670;&nbsp;</a></span>write() <span class="overload">[11/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write an unsigned int value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Value to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a99f637f307349f22fdc2b6b1c78e3c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99f637f307349f22fdc2b6b1c78e3c2b">&#9670;&nbsp;</a></span>write() <span class="overload">[12/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write an unsigned long long value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Value to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a5c20dfd3ea0c6636cc215d47f22ca03a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c20dfd3ea0c6636cc215d47f22ca03a">&#9670;&nbsp;</a></span>write() <span class="overload">[13/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write an unsigned long value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Value to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
+<a id="a100498966cf02a95026b41c6b0e5c8dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100498966cf02a95026b41c6b0e5c8dc">&#9670;&nbsp;</a></span>write() <span class="overload">[14/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Print::write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write an unsigned short value as a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Value to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes written </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>docs/arduino/<a class="el" href="_print_8h_source.html">Print.h</a></li>
 </ul>

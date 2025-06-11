@@ -64,7 +64,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">esp32_psram Namespace Reference</div>  </div>
@@ -89,12 +88,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for managing files stored in ESP32's PSRAM.  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html">RingBufferStream</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A circular buffer implementation that extends Arduino's <a class="el" href="class_stream.html">Stream</a>.  <a href="classesp32__psram_1_1_ring_buffer_stream.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A circular buffer implementation that extends Arduino's <a class="el" href="class_stream.html" title="Base class for all character and binary stream operations.">Stream</a>.  <a href="classesp32__psram_1_1_ring_buffer_stream.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_typed_ring_buffer.html">TypedRingBuffer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic ring buffer implementation for any data type.  <a href="classesp32__psram_1_1_typed_ring_buffer.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_vector_file.html">VectorFile</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html">VectorHIMEM</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector implementation that uses ESP32's high memory (himem) for storage.  <a href="classesp32__psram_1_1_vector_h_i_m_e_m.html#details">More...</a><br /></td></tr>
@@ -105,12 +102,6 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a13c1047ebd3c73047431a738c1d6981c"><td class="memItemLeft" align="right" valign="top"><a id="a13c1047ebd3c73047431a738c1d6981c"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>FileHIMEM</b> = <a class="el" href="classesp32__psram_1_1_vector_file.html">VectorFile</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html">VectorHIMEM</a>&lt; uint8_t &gt; &gt;</td></tr>
-<tr class="separator:a13c1047ebd3c73047431a738c1d6981c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a511bd6865ed866f337509d6a38a73e5b"><td class="memItemLeft" align="right" valign="top"><a id="a511bd6865ed866f337509d6a38a73e5b"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>FilePSRAM</b> = <a class="el" href="classesp32__psram_1_1_vector_file.html">VectorFile</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; &gt;</td></tr>
-<tr class="separator:a511bd6865ed866f337509d6a38a73e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae93405c4423018bca8dade7447c6d338"><td class="memItemLeft" align="right" valign="top"><a id="ae93405c4423018bca8dade7447c6d338"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceesp32__psram.html#ae93405c4423018bca8dade7447c6d338">RingBufferStreamHIMEM</a> = <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html">RingBufferStream</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html">VectorHIMEM</a>&lt; uint8_t &gt; &gt;</td></tr>
 <tr class="memdesc:ae93405c4423018bca8dade7447c6d338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for a <a class="el" href="classesp32__psram_1_1_ring_buffer_stream.html" title="A circular buffer implementation that extends Arduino&#39;s Stream.">RingBufferStream</a> that uses HIMEM-backed vector storage. <br /></td></tr>
@@ -138,15 +129,6 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a03ac91657ea774fb5b6030f1aff3f15f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceesp32__psram.html#a03ac91657ea774fb5b6030f1aff3f15f">TypedRingBufferRAM</a> = <a class="el" href="classesp32__psram_1_1_typed_ring_buffer.html">TypedRingBuffer</a>&lt; T, std::vector&lt; T &gt; &gt;</td></tr>
 <tr class="memdesc:a03ac91657ea774fb5b6030f1aff3f15f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for a typed ring buffer that uses std::vector (in RAM) <br /></td></tr>
 <tr class="separator:a03ac91657ea774fb5b6030f1aff3f15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a14f8cd52dc1860a6b5ec38c254e2ee67"><td class="memItemLeft" align="right" valign="top"><a id="a14f8cd52dc1860a6b5ec38c254e2ee67"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>FileMode</b> { <b>READ</b>
-, <b>WRITE</b>
-, <b>APPEND</b>
-, <b>READ_WRITE</b>
- }</td></tr>
-<tr class="separator:a14f8cd52dc1860a6b5ec38c254e2ee67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>

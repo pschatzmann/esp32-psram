@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['read_215',['READ',['../namespaceesp32__psram.html#a14f8cd52dc1860a6b5ec38c254e2ee67a3466fab4975481651940ed328aa990e4',1,'esp32_psram']]],
-  ['read_5fwrite_216',['READ_WRITE',['../namespaceesp32__psram.html#a14f8cd52dc1860a6b5ec38c254e2ee67aa7b843fb734e3b3fea8e5f902d3f4144',1,'esp32_psram']]]
+  ['shortoperation_273',['ShortOperation',['../class_stream.html#a37c8a5527f741942d10ecd2a53c1f220a9696694f1debad4bf218a523c36469ce',1,'Stream']]],
+  ['success_274',['Success',['../class_stream.html#a37c8a5527f741942d10ecd2a53c1f220a505a83f220c02df2f85c3810cd9ceb38',1,'Stream']]]
 ];

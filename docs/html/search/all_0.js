@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['allocate_0',['allocate',['../classesp32__psram_1_1_himem_block.html#af1cb8cdc3d99963ad4eff2ea2175f966',1,'esp32_psram::HimemBlock::allocate()'],['../classesp32__psram_1_1_p_s_r_a_m_allocator.html#a61436aeace579bc9fc261cba6879c317',1,'esp32_psram::PSRAMAllocator::allocate()']]],
-  ['at_1',['at',['../classesp32__psram_1_1_vector_h_i_m_e_m.html#ac52821e50204d64489ebe628349759c9',1,'esp32_psram::VectorHIMEM::at(size_type pos)'],['../classesp32__psram_1_1_vector_h_i_m_e_m.html#ac5f44eedd38093f40666d6e08c2bbf7b',1,'esp32_psram::VectorHIMEM::at(size_type pos) const'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a9dee6b492589d24d203d67abf5e6b89d',1,'esp32_psram::VectorPSRAM::at(size_type pos)'],['../classesp32__psram_1_1_vector_p_s_r_a_m.html#a51c448ed4dc3151b6be1be90169e9e6b',1,'esp32_psram::VectorPSRAM::at(size_type pos) const']]],
-  ['available_2',['available',['../classesp32__psram_1_1_ring_buffer_stream.html#a6d34d315c1709a22a411c310e7e92cce',1,'esp32_psram::RingBufferStream::available()'],['../classesp32__psram_1_1_typed_ring_buffer.html#a010a810e87427e7698227696afe7fbcf',1,'esp32_psram::TypedRingBuffer::available()'],['../classesp32__psram_1_1_vector_file.html#a51a01b2a9f2d55f9fb87aa108f5250a2',1,'esp32_psram::VectorFile::available()']]],
-  ['availableforwrite_3',['availableForWrite',['../classesp32__psram_1_1_ring_buffer_stream.html#abcdaaff2c51d46bd6b62b1acb38ac7bf',1,'esp32_psram::RingBufferStream::availableForWrite()'],['../classesp32__psram_1_1_typed_ring_buffer.html#a6ee8a96d600826f3b326581a92973495',1,'esp32_psram::TypedRingBuffer::availableForWrite()']]]
+  ['_5fstartmillis_0',['_startMillis',['../class_stream.html#abf61d2006d28d18f2e028285a323fe5a',1,'Stream']]],
+  ['_5ftimeout_1',['_timeout',['../class_stream.html#aae48f1a926d2e82a452f2c75af0c6a29',1,'Stream']]]
 ];

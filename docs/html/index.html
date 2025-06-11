@@ -70,7 +70,7 @@ $(function() {
 <h1><a class="anchor" id="autotoc_md1"></a>
 Overview</h1>
 <p>The ESP32 can only address 4MB of PSRAM directly, so the remaining 4MB (HIMEM) are usually unsued!</p>
-<p>ESP32-PSRAM is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM.</p>
+<p><b>ESP32-PSRAM</b> is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM.</p>
 <ul>
 <li><b>Memory-Efficient Data Structures</b>:<ul>
 <li><code>VectorPSRAM</code>: Vector implementation that automatically stores data in PSRAM</li>
@@ -80,14 +80,14 @@ Overview</h1>
 <li><b>File System Abstractions</b>:<ul>
 <li><code>FilePSRAM</code>: File-like interface backed by PSRAM</li>
 <li><code>FileHIMEM</code>: File-like interface backed by high memory</li>
-<li>SD card-like API for familiar file operations</li>
+<li>SD card-like API using familiar file operations to write to PSRAM or HIMEM.</li>
 </ul>
 </li>
 <li><b>Streaming Data Handling</b>:<ul>
-<li><code>RingBufferRAM</code>: Circular buffer implementation in RAM (Stream-based)</li>
-<li><code>RingBufferPSRAM</code>: Circular buffer implementation in PSRAM (Stream-based)</li>
-<li><code>RingBufferHIMEM</code>: Circular buffer implementation in high memory (Stream-based)</li>
-<li>Fully compatible with Arduino's <a class="el" href="class_stream.html">Stream</a> class</li>
+<li><code>RingBufferStreamRAM</code>: Circular buffer implementation in RAM (Stream-based)</li>
+<li><code>RingBufferStreamPSRAM</code>: Circular buffer implementation in PSRAM (Stream-based)</li>
+<li><code>RingBufferStreamHIMEM</code>: Circular buffer implementation in high memory (Stream-based)</li>
+<li>Fully compatible with Arduino's <a class="el" href="class_stream.html" title="Base class for all character and binary stream operations.">Stream</a> class</li>
 </ul>
 </li>
 <li><b>Typed Ring Buffers</b>:<ul>
@@ -100,201 +100,19 @@ Overview</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Installation</h1>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Arduino IDE</h2>
-<ol type="1">
-<li>In Arduino IDE, go to <b>Sketch &gt; Include Library &gt; Manage Libraries...</b></li>
-<li>Search for "ESP32-PSRAM"</li>
-<li>Click "Install"</li>
-</ol>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Manual Installation</h2>
 <ol type="1">
 <li>Download the latest release from GitHub</li>
 <li>Extract the ZIP file</li>
 <li>Move the folder to your Arduino libraries directory (typically <code>~/Arduino/libraries/</code> on Linux/macOS or <code>Documents\Arduino\libraries\</code> on Windows)</li>
 <li>Restart Arduino IDE</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Usage Examples</h1>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Basic Vector Usage</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_e_s_p32-_p_s_r_a_m_8h.html">ESP32-PSRAM.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> setup() {</div>
-<div class="line">  Serial.begin(115200);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Create a vector in PSRAM</span></div>
-<div class="line">  VectorPSRAM&lt;int&gt; psram_vector;</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Add elements</span></div>
-<div class="line">  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 1000; i++) {</div>
-<div class="line">    psram_vector.push_back(i);</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  Serial.printf(<span class="stringliteral">&quot;Vector size: %d\n&quot;</span>, psram_vector.size());</div>
-<div class="line">  Serial.printf(<span class="stringliteral">&quot;First element: %d\n&quot;</span>, psram_vector.front());</div>
-<div class="line">  Serial.printf(<span class="stringliteral">&quot;Last element: %d\n&quot;</span>, psram_vector.back());</div>
-<div class="line">}</div>
-<div class="ttc" id="a_e_s_p32-_p_s_r_a_m_8h_html"><div class="ttname"><a href="_e_s_p32-_p_s_r_a_m_8h.html">ESP32-PSRAM.h</a></div><div class="ttdoc">Main include file for the ESP32-PSRAM library.</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
-File Operations</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_e_s_p32-_p_s_r_a_m_8h.html">ESP32-PSRAM.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> setup() {</div>
-<div class="line">  Serial.begin(115200);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Initialize PSRAM file system</span></div>
-<div class="line">  <span class="keywordflow">if</span> (!PSRAM.begin()) {</div>
-<div class="line">    Serial.println(<span class="stringliteral">&quot;PSRAM initialization failed!&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">return</span>;</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Create and write to a file</span></div>
-<div class="line">  <span class="keyword">auto</span> file = PSRAM.open(<span class="stringliteral">&quot;test.txt&quot;</span>, FILE_WRITE);</div>
-<div class="line">  <span class="keywordflow">if</span> (file) {</div>
-<div class="line">    file.println(<span class="stringliteral">&quot;Hello PSRAM!&quot;</span>);</div>
-<div class="line">    file.println(<span class="stringliteral">&quot;This is a test file.&quot;</span>);</div>
-<div class="line">    file.close();</div>
-<div class="line">    Serial.println(<span class="stringliteral">&quot;File written successfully&quot;</span>);</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Read from the file</span></div>
-<div class="line">  file = PSRAM.open(<span class="stringliteral">&quot;test.txt&quot;</span>, FILE_READ);</div>
-<div class="line">  <span class="keywordflow">if</span> (file) {</div>
-<div class="line">    Serial.println(<span class="stringliteral">&quot;File contents:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">while</span> (file.available()) {</div>
-<div class="line">      Serial.write(file.read());</div>
-<div class="line">    }</div>
-<div class="line">    file.close();</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
-Stream-Based Ring Buffer</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_e_s_p32-_p_s_r_a_m_8h.html">ESP32-PSRAM.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> setup() {</div>
-<div class="line">  Serial.begin(115200);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Create a ring buffer in PSRAM with 1024 bytes capacity</span></div>
-<div class="line">  <a class="code" href="namespaceesp32__psram.html#a03366b5955bebff1d9a4107c7cc64c05">RingBufferStreamPSRAM</a> buffer(1024);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Write data to the buffer</span></div>
-<div class="line">  buffer.print(<span class="stringliteral">&quot;Hello, Ring Buffer!&quot;</span>);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Read and print the data</span></div>
-<div class="line">  <span class="keywordflow">while</span> (buffer.available()) {</div>
-<div class="line">    Serial.write(buffer.read());</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-<div class="ttc" id="anamespaceesp32__psram_html_a03366b5955bebff1d9a4107c7cc64c05"><div class="ttname"><a href="namespaceesp32__psram.html#a03366b5955bebff1d9a4107c7cc64c05">esp32_psram::RingBufferStreamPSRAM</a></div><div class="ttdeci">RingBufferStream&lt; VectorPSRAM&lt; uint8_t &gt; &gt; RingBufferStreamPSRAM</div><div class="ttdoc">Type alias for a RingBufferStream that uses PSRAM-backed vector storage.</div><div class="ttdef"><b>Definition:</b> RingBufferStream.h:236</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
-Typed Ring Buffer</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_e_s_p32-_p_s_r_a_m_8h.html">ESP32-PSRAM.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Define a custom data structure</span></div>
-<div class="line"><span class="keyword">struct </span>SensorData {</div>
-<div class="line">  <span class="keywordtype">float</span> temperature;</div>
-<div class="line">  <span class="keywordtype">float</span> humidity;</div>
-<div class="line">  uint32_t timestamp;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> setup() {</div>
-<div class="line">  Serial.begin(115200);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Create a typed ring buffer for sensor data</span></div>
-<div class="line">  TypedRingBufferPSRAM&lt;SensorData&gt; dataBuffer(100);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Add some data</span></div>
-<div class="line">  SensorData reading = {25.4, 68.7, millis()};</div>
-<div class="line">  dataBuffer.push(reading);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Read data back</span></div>
-<div class="line">  SensorData result;</div>
-<div class="line">  <span class="keywordflow">if</span> (dataBuffer.pop(result)) {</div>
-<div class="line">    Serial.printf(<span class="stringliteral">&quot;Temperature: %.1f°C, Humidity: %.1f%%\n&quot;</span>, </div>
-<div class="line">                 result.temperature, result.humidity);</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 API Reference</h1>
-<h2><a class="anchor" id="autotoc_md11"></a>
-Vector Classes</h2>
 <ul>
-<li><code>VectorPSRAM&lt;T&gt;</code>: Similar interface to std::vector but stores data in PSRAM<ul>
-<li><code>push_back(value)</code>: Add element to the end</li>
-<li><code>pop_back()</code>: Remove the last element</li>
-<li><code>size()</code>: Get number of elements</li>
-<li><code>capacity()</code>: Get allocated storage capacity</li>
-<li><code>operator[]</code>: Access element by index</li>
-<li><code>clear()</code>: Remove all elements</li>
-<li><code>reserve(n)</code>: Reserve storage for n elements</li>
+<li><a href="https://pschatzmann.github.io/esp32-psram/html/namespaceesp32__psram.html">Class Reference</a></li>
+<li><a href="https://github.com/pschatzmann/esp32-psram/wiki">Further Information</a></li>
 </ul>
-</li>
-<li><code>VectorHIMEM&lt;T&gt;</code>: Similar interface to std::vector but stores data in high memory<ul>
-<li>Same interface as VectorPSRAM</li>
-</ul>
-</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md12"></a>
-File Classes</h2>
-<ul>
-<li><code>PSRAM</code>: Global instance providing file operations in PSRAM<ul>
-<li><code>begin()</code>: Initialize the PSRAM filesystem</li>
-<li><code>open(filename, mode)</code>: Open a file</li>
-<li><code>exists(filename)</code>: Check if a file exists</li>
-<li><code>remove(filename)</code>: Delete a file</li>
-<li><code>totalBytes()</code>: Get total PSRAM size</li>
-<li><code>freeBytes()</code>: Get free PSRAM available</li>
-</ul>
-</li>
-<li><code>HIMEM</code>: Global instance providing file operations in high memory<ul>
-<li>Same interface as PSRAM but uses high memory</li>
-</ul>
-</li>
-<li><code>FilePSRAM</code> and <code>FileHIMEM</code>: File interface<ul>
-<li><code>read()</code>: Read a byte</li>
-<li><code>write(byte)</code>: Write a byte</li>
-<li><code>available()</code>: Check bytes available for reading</li>
-<li><code>seek(pos)</code>: Set position in file</li>
-<li><code>position()</code>: Get current position</li>
-<li><code>size()</code>: Get file size</li>
-<li><code>flush()</code>: Ensure all data is written</li>
-<li><code>close()</code>: Close the file</li>
-</ul>
-</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Ring Buffer Classes</h2>
-<ul>
-<li><code>RingBufferPSRAM</code> and <code>RingBufferHIMEM</code>: Stream-based circular buffers<ul>
-<li><code>available()</code>: Check bytes available for reading</li>
-<li><code>availableForWrite()</code>: Check space available for writing</li>
-<li><code>read()</code>: Read a byte</li>
-<li><code>peek()</code>: Look at next byte without consuming</li>
-<li><code>write(byte)</code>: Write a byte</li>
-<li><code>flush()</code>: Clear buffer</li>
-<li><code>size()</code>: Get total capacity</li>
-<li><code>used()</code>: Get number of bytes currently stored</li>
-<li><code>free()</code>: Get free space</li>
-</ul>
-</li>
-<li><code>TypedRingBufferPSRAM&lt;T&gt;</code> and <code>TypedRingBufferHIMEM&lt;T&gt;</code>: Type-safe circular buffers<ul>
-<li><code>push(value)</code>: Add an element (fails if full)</li>
-<li><code>pushOverwrite(value)</code>: Add an element, overwriting oldest if full</li>
-<li><code>pop(value)</code>: Remove and return the oldest element</li>
-<li><code>peek(value)</code>: Look at oldest element without removing</li>
-<li><code>peekAt(index, value)</code>: Look at element at specified position</li>
-<li><code>clear()</code>: Remove all elements</li>
-<li><code>isEmpty()</code>: Check if buffer is empty</li>
-<li><code>isFull()</code>: Check if buffer is full</li>
-<li><code>available()</code>: Get number of elements stored</li>
-<li><code>availableForWrite()</code>: Get number of free slots</li>
-<li><code>capacity()</code>: Get total capacity</li>
-</ul>
-</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Memory Performance Comparison</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -306,7 +124,7 @@ Memory Performance Comparison</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">HIMEM   </td><td class="markdownTableBodyNone">Medium   </td><td class="markdownTableBodyNone">Up to 8MB   </td><td class="markdownTableBodyNone">Large datasets, less frequent access   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Hardware Compatibility</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -320,37 +138,7 @@ Hardware Compatibility</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ESP32-C3   </td><td class="markdownTableBodyNone">None   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Not compatible with this library   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md16"></a>
-Troubleshooting</h1>
-<h2><a class="anchor" id="autotoc_md17"></a>
-PSRAM Not Detected</h2>
-<ul>
-<li>Ensure PSRAM is enabled in your Arduino IDE board configuration:<ul>
-<li>Tools &gt; PSRAM: "Enabled"</li>
-</ul>
-</li>
-<li>Add this to your setup function to verify PSRAM: <div class="fragment"><div class="line"><span class="keywordflow">if</span> (psramFound()) {</div>
-<div class="line">  Serial.printf(<span class="stringliteral">&quot;PSRAM size: %d bytes\n&quot;</span>, ESP.getPsramSize());</div>
-<div class="line">} <span class="keywordflow">else</span> {</div>
-<div class="line">  Serial.println(<span class="stringliteral">&quot;No PSRAM detected!&quot;</span>);</div>
-<div class="line">}</div>
-</div><!-- fragment --></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md18"></a>
-Memory Allocation Failures</h2>
-<ul>
-<li>When using large allocations, check available memory first: <div class="fragment"><div class="line">Serial.printf(<span class="stringliteral">&quot;Free PSRAM: %d bytes\n&quot;</span>, ESP.getFreePsram());</div>
-</div><!-- fragment --></li>
-<li>Try reducing buffer sizes or using multiple smaller buffers</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md19"></a>
-Performance Issues</h2>
-<ul>
-<li>HIMEM access is slower than PSRAM or RAM</li>
-<li>For frequently accessed data, prefer RAM &gt; PSRAM &gt; HIMEM</li>
-<li>Use the appropriate container for your use case</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Design Philosophy</h1>
 <p>The ESP32-PSRAM library is designed with these principles in mind:</p>
 <ol type="1">
@@ -360,13 +148,13 @@ Design Philosophy</h1>
 <li><b>Flexibility</b>: Configurable for different memory types and use cases</li>
 <li><b>Zero overhead</b>: Direct memory access with minimal abstraction layers</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 License</h1>
 <p>MIT License</p>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Contributing</h1>
 <p>Contributions are welcome! Please feel free to submit a Pull Request.</p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Acknowledgements</h1>
 <p>This library was inspired by the need for better memory management solutions on ESP32, especially for audio, image processing, and data logging applications. </p>
 </div></div><!-- PageDoc -->

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['typedringbufferhimem_193',['TypedRingBufferHIMEM',['../namespaceesp32__psram.html#a8c967dbf05f3e0e93755ab773a3c6ff6',1,'esp32_psram']]],
-  ['typedringbufferpsram_194',['TypedRingBufferPSRAM',['../namespaceesp32__psram.html#a616c5446cf62c7209e8b3203c4a63920',1,'esp32_psram']]],
-  ['typedringbufferram_195',['TypedRingBufferRAM',['../namespaceesp32__psram.html#a03ac91657ea774fb5b6030f1aff3f15f',1,'esp32_psram']]]
+  ['ringbufferstreamhimem_265',['RingBufferStreamHIMEM',['../namespaceesp32__psram.html#ae93405c4423018bca8dade7447c6d338',1,'esp32_psram']]],
+  ['ringbufferstreampsram_266',['RingBufferStreamPSRAM',['../namespaceesp32__psram.html#a03366b5955bebff1d9a4107c7cc64c05',1,'esp32_psram']]],
+  ['ringbufferstreamram_267',['RingBufferStreamRAM',['../namespaceesp32__psram.html#a5a53cb18d3dd07043a30cc6fb095e92f',1,'esp32_psram']]]
 ];

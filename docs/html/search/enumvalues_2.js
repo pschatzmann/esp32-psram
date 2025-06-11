@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_217',['WRITE',['../namespaceesp32__psram.html#a14f8cd52dc1860a6b5ec38c254e2ee67ad4b9e47f65b6e79b010582f15785867e',1,'esp32_psram']]]
+  ['timedout_275',['TimedOut',['../class_stream.html#a37c8a5527f741942d10ecd2a53c1f220a9541eb2348d883dd8e32ae0420274c4c',1,'Stream']]]
 ];
