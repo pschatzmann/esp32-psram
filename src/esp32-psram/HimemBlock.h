@@ -44,7 +44,7 @@ class HimemBlock {
   /**
    * @brief Allocate a block of himem
    * @param block_size Size of memory to allocate in bytes
-   * @return true if allocation was successful, false otherwise
+   * @return the allocated (block) size in bytes, 0 otherwise
    */
   size_t allocate(size_t block_size) {
     ESP_LOGI(TAG, "HimemBlock::allocate(%u bytes) - Current handle: %p",
