@@ -13,25 +13,25 @@ enum class FileMode { READ, WRITE, APPEND, READ_WRITE };
 /**
  * @class InMemoryFile
  * @brief A file-like interface for vector-backed storage in memory
- * 
+ *
  * This class provides a file-like interface (compatible with Arduino's Stream)
  * for reading and writing data to vector-backed storage. It can use either
  * standard PSRAM or ESP32's HIMEM (high memory beyond the 4MB boundary)
  * as its underlying storage mechanism through the VectorPSRAM and VectorHIMEM
  * implementations.
- * 
+ *
  * InMemoryFile offers familiar file operations like open, close, read, write,
  * seek, and truncate while managing the data in memory rather than on disk.
  * This makes it useful for temporary storage, data processing, or situations
  * where file operations are needed but filesystem access is not available
  * or desirable.
- * 
+ *
  * The class can either manage its own internal vector or reference an external
  * vector supplied by another component (like PSRAMClass or HIMEMClass).
- * 
+ *
  * @tparam VectorType The vector implementation to use for storage (typically
  *                   VectorPSRAM<uint8_t> or VectorHIMEM<uint8_t>)
- * 
+ *
  * @note The performance characteristics will depend on the underlying vector
  *       implementation. HIMEM operations are generally slower than regular
  *       PSRAM operations but allow for larger storage capacity.
@@ -39,6 +39,9 @@ enum class FileMode { READ, WRITE, APPEND, READ_WRITE };
 template <typename VectorType>
 class InMemoryFile : public Stream {
  public:
+  // Define a single callback type that returns the next file directly
+  using NextFileCallback =
+      std::function<InMemoryFile<VectorType>(const char*, FileMode)>;
   /**
    * @brief Default constructor - initializes with internal vector
    */
@@ -340,6 +343,39 @@ class InMemoryFile : public Stream {
   }
 
   operator bool() const { return open_; }
+  /**
+   * @brief Set callback for navigating to the next file
+   *
+   * This function sets a callback that will be used to retrieve the next
+   * file when getNextFile() is called. The callback takes the current file name
+   * and mode, and returns the next file object directly.
+   *
+   * @param callback Function that returns the next file
+   */
+  void setNextFileCallback(NextFileCallback callback) {
+    ESP_LOGD(TAG, "Setting next file callback");
+    nextFileCallback = callback;
+  }
+
+  /**
+   * @brief Get the next file in the filesystem
+   *
+   * This method uses the registered callback to get the next file
+   * after this one in the filesystem.
+   *
+   * @return The next file, or an empty file if there is no next file or
+   * callback isn't set
+   */
+  InMemoryFile<VectorType> getNextFile() {
+    if (!nextFileCallback || name_.isEmpty()) {
+      // Return empty file if callback isn't set or no name
+      InMemoryFile<VectorType> emptyFile;
+      return emptyFile;
+    }
+
+    // Get the next file directly using the callback
+    return nextFileCallback(name_.c_str(), mode);
+  }
 
   /**
    * @brief Reserve storage
@@ -370,6 +406,9 @@ class InMemoryFile : public Stream {
   bool open_ = false;
   FileMode mode = FileMode::READ;
   String name_;
+
+  // Single callback for getting the next file
+  NextFileCallback nextFileCallback = nullptr;
 
   // Tags for debug logging
   static constexpr const char* TAG = "InMemoryFile";
