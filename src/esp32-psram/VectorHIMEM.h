@@ -13,61 +13,6 @@ namespace esp32_psram {
  */
 template <typename T>
 class VectorHIMEM {
- private:
-  HimemBlock memory;
-  size_t element_count = 0;
-  size_t element_capacity = 0;
-  static constexpr size_t min_elements = 16;  // Minimum allocation size
-
-  /**
-   * @brief Calculate required memory size in bytes for a given number of
-   * elements
-   * @param count Number of elements
-   * @return Size in bytes
-   */
-  static size_t calculate_size_bytes(size_t count) { return count * sizeof(T); }
-
-  /**
-   * @brief Reallocate memory with a new capacity
-   * @param new_capacity The new capacity to allocate
-   * @return true if reallocation was successful, false otherwise
-   */
-  bool reallocate(size_t new_capacity) {
-    if (new_capacity <= element_capacity) {
-      return true;  // No need to reallocate
-    }
-
-    // Calculate new size (at least min_elements)
-    new_capacity = std::max(new_capacity, min_elements);
-
-    // Create a new memory block
-    HimemBlock new_memory;
-    if (!new_memory.allocate(calculate_size_bytes(new_capacity))) {
-      ESP_LOGE(TAG, "Failed to allocate new memory block");
-      return false;
-    }
-
-    // Copy existing elements if any
-    if (element_count > 0) {
-      T temp;
-      for (size_t i = 0; i < element_count; ++i) {
-        // Read from old memory
-        memory.read(&temp, i * sizeof(T), sizeof(T));
-
-        // Write to new memory
-        new_memory.write(&temp, i * sizeof(T), sizeof(T));
-      }
-    }
-
-    // Swap the memory blocks
-    memory = std::move(new_memory);
-
-    // Calculate actual element capacity from the allocated memory size
-    element_capacity = memory.get_size() / sizeof(T);
-
-    return true;
-  }
-
  public:
   // Type definitions
   using value_type = T;
@@ -476,6 +421,61 @@ class VectorHIMEM {
     std::swap(element_count, other.element_count);
     std::swap(element_capacity, other.element_capacity);
   }
+
+ protected:
+  HimemBlock memory;
+  size_t element_count = 0;
+  size_t element_capacity = 0;
+  static constexpr size_t min_elements = 16;  // Minimum allocation size
+
+  /**
+   * @brief Calculate required memory size in bytes for a given number of
+   * elements
+   * @param count Number of elements
+   * @return Size in bytes
+   */
+  static size_t calculate_size_bytes(size_t count) { return count * sizeof(T); }
+
+  /**
+   * @brief Reallocate memory with a new capacity
+   * @param new_capacity The new capacity to allocate
+   * @return true if reallocation was successful, false otherwise
+   */
+  bool reallocate(size_t new_capacity) {
+    if (new_capacity <= element_capacity) {
+      return true;  // No need to reallocate
+    }
+
+    // Calculate new size (at least min_elements)
+    new_capacity = std::max(new_capacity, min_elements);
+
+    // Create a new memory block
+    HimemBlock new_memory;
+    element_capacity = new_memory.allocate(calculate_size_bytes(new_capacity)) / sizeof(T);
+    if (element_capacity == 0) {
+      ESP_LOGE(TAG, "Failed to allocate new memory block");
+      return false;
+    }
+
+    // Copy existing elements if any
+    if (element_count > 0) {
+      T temp;
+      for (size_t i = 0; i < element_count; ++i) {
+        // Read from old memory
+        memory.read(&temp, i * sizeof(T), sizeof(T));
+
+        // Write to new memory
+        new_memory.write(&temp, i * sizeof(T), sizeof(T));
+      }
+    }
+
+    // Swap the memory blocks
+    memory = std::move(new_memory);
+
+    return true;
+  }
+
+
 };
 
 /**

@@ -46,8 +46,8 @@ class HimemBlock {
    * @param block_size Size of memory to allocate in bytes
    * @return true if allocation was successful, false otherwise
    */
-  bool allocate(size_t block_size) {
-    ESP_LOGD(TAG, "HimemBlock::allocate(%u bytes) - Current handle: %p",
+  size_t allocate(size_t block_size) {
+    ESP_LOGI(TAG, "HimemBlock::allocate(%u bytes) - Current handle: %p",
              block_size, handle);
 
     if (handle != 0) {
@@ -64,12 +64,12 @@ class HimemBlock {
     if (err != ESP_OK) {
       ESP_LOGE(TAG, "HIMEM allocation failed - error: %d, size: %d", err,
                block_size);
-      return false;
+      return 0;
     }
 
     ESP_LOGD(TAG, "- Successfully allocated %u bytes, handle: %p", block_size,
              handle);
-    return true;
+    return block_size;
   }
 
   /**
