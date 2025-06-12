@@ -47,8 +47,10 @@ public:
      * @throws std::bad_alloc If allocation fails or size is too large
      */
     pointer allocate(size_type n) {
-        if (n > std::numeric_limits<size_type>::max() / sizeof(T))
-            throw std::bad_alloc();
+        // if (n > std::numeric_limits<size_type>::max() / sizeof(T))
+        //     throw std::bad_alloc();
+        // in Arduino excepitons are disabled!
+        assert(n <= std::numeric_limits<size_type>::max() / sizeof(T));
             
         pointer p = static_cast<pointer>(heap_caps_malloc(n * sizeof(T), MALLOC_CAP_SPIRAM));
         
