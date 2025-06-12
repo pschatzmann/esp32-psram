@@ -1,5 +1,6 @@
 #pragma once
 
+#ifdef ESP32
 /**
  * @file ESP32-PSRAM.h
  * @brief Main include file for the ESP32-PSRAM library
@@ -20,4 +21,8 @@
 #ifndef ESP32_PSRAM_NO_NAMESPACE
 using namespace esp32_psram;
 #endif
+
+#else
+#error "This library is only compatible with ESP32 platforms."
+#endif  // ESP32
 
