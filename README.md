@@ -12,6 +12,8 @@ The ESP32 can only address 4MB of PSRAM directly, so the remaining 4MB (HIMEM) a
 
 __esp32-psram__ is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM. 
 
+- **Use any STL Class in PSRAM**:
+  - Adapt any [STL class](https://en.wikipedia.org/wiki/Standard_Template_Library) that accepts with an Allocator by using the [AllocatorPSRAM](https://pschatzmann.github.io/esp32-psram/html/classesp32__psram_1_1_p_s_r_a_m_allocator.html)
 
 - **Memory-Efficient Data Structures**:
   - `VectorPSRAM`: Vector implementation that automatically stores data in PSRAM
@@ -33,9 +35,6 @@ __esp32-psram__ is a C++ library that helps you manage large amounts of data on 
   - `TypedRingBufferPSRAM<T>`: PSRAM version for storing complex data structures
   - `TypedRingBufferHIMEM<T>`: High memory version for storing complex data structures
   - Optimized for struct/class storage with proper memory management
-
-- **Use any STL Class in PSRAM**:
-  - Adapt any [STL class](https://en.wikipedia.org/wiki/Standard_Template_Library) that accepts with an Allocator by using the [AllocatorPSRAM](https://pschatzmann.github.io/esp32-psram/html/classesp32__psram_1_1_p_s_r_a_m_allocator.html)
 
 
 ## Installation
