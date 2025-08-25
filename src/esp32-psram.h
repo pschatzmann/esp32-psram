@@ -10,6 +10,7 @@
  */
 
 // Include all library components
+#include "esp32-psram/AllocatorPSRAM.h"   // PSRAM-backed vector
 #include "esp32-psram/VectorPSRAM.h"   // PSRAM-backed vector
 #include "esp32-psram/VectorHIMEM.h"   // HIMEM-backed vector
 #include "esp32-psram/InMemoryFile.h"    // File interface using vectors
