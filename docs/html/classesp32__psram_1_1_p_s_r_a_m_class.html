@@ -67,50 +67,78 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classesp32__psram_1_1_p_s_r_a_m_class-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">esp32_psram::PSRAMClass Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class for managing files stored in ESP32's PSRAM: Use the PSRAM object instead instaniating this class directly.  
+<p>Class for managing files stored in ESP32's PSRAM.  
  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_p_s_r_a_m_8h_source.html">PSRAM.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for esp32_psram::PSRAMClass:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classesp32__psram_1_1_p_s_r_a_m_class.png" usemap="#esp32_5Fpsram::PSRAMClass_map" alt=""/>
+  <map id="esp32_5Fpsram::PSRAMClass_map" name="esp32_5Fpsram::PSRAMClass_map">
+<area href="classesp32__psram_1_1_in_memory_f_s.html" alt="esp32_psram::InMemoryFS&lt; VectorPSRAM&lt; uint8_t &gt;, FilePSRAM &gt;" shape="rect" coords="0,0,406,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab70203127c09e7bb7df3cb7961b0762d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#ab70203127c09e7bb7df3cb7961b0762d">begin</a> ()</td></tr>
-<tr class="memdesc:ab70203127c09e7bb7df3cb7961b0762d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the PSRAM filesystem.  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#ab70203127c09e7bb7df3cb7961b0762d">More...</a><br /></td></tr>
-<tr class="separator:ab70203127c09e7bb7df3cb7961b0762d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa89ecf0ff9fe808df9f725ae3d622a89"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#aa89ecf0ff9fe808df9f725ae3d622a89">exists</a> (const char *filename)</td></tr>
-<tr class="memdesc:aa89ecf0ff9fe808df9f725ae3d622a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a file exists in PSRAM.  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#aa89ecf0ff9fe808df9f725ae3d622a89">More...</a><br /></td></tr>
-<tr class="separator:aa89ecf0ff9fe808df9f725ae3d622a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f6bb344efa5f2d3fe1db5c0241da291"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#a5f6bb344efa5f2d3fe1db5c0241da291">freeBytes</a> ()</td></tr>
-<tr class="memdesc:a5f6bb344efa5f2d3fe1db5c0241da291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get free space (returns free PSRAM)  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#a5f6bb344efa5f2d3fe1db5c0241da291">More...</a><br /></td></tr>
-<tr class="separator:a5f6bb344efa5f2d3fe1db5c0241da291"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70f497d8b0aeba603f092f9716ab4c78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#a70f497d8b0aeba603f092f9716ab4c78">mkdir</a> (const char *dirname)</td></tr>
-<tr class="memdesc:a70f497d8b0aeba603f092f9716ab4c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a directory (no-op for compatibility)  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#a70f497d8b0aeba603f092f9716ab4c78">More...</a><br /></td></tr>
-<tr class="separator:a70f497d8b0aeba603f092f9716ab4c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7b4cb81a8c79c0022101042e5c5ec52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#ad7b4cb81a8c79c0022101042e5c5ec52">open</a> (const char *filename, uint8_t mode)</td></tr>
-<tr class="memdesc:ad7b4cb81a8c79c0022101042e5c5ec52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a file in PSRAM.  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#ad7b4cb81a8c79c0022101042e5c5ec52">More...</a><br /></td></tr>
-<tr class="separator:ad7b4cb81a8c79c0022101042e5c5ec52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2462c652406a3d27c4844ab64c9a4780"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#a2462c652406a3d27c4844ab64c9a4780">remove</a> (const char *filename)</td></tr>
-<tr class="memdesc:a2462c652406a3d27c4844ab64c9a4780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a file from PSRAM.  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#a2462c652406a3d27c4844ab64c9a4780">More...</a><br /></td></tr>
-<tr class="separator:a2462c652406a3d27c4844ab64c9a4780"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1610c12372dc2fa3d537b0dbd922180c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#a1610c12372dc2fa3d537b0dbd922180c">rmdir</a> (const char *dirname)</td></tr>
-<tr class="memdesc:a1610c12372dc2fa3d537b0dbd922180c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a directory (no-op for compatibility)  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#a1610c12372dc2fa3d537b0dbd922180c">More...</a><br /></td></tr>
-<tr class="separator:a1610c12372dc2fa3d537b0dbd922180c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cced42323b5dc4385546e67b4449e07"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#a7cced42323b5dc4385546e67b4449e07">totalBytes</a> ()</td></tr>
-<tr class="memdesc:a7cced42323b5dc4385546e67b4449e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get total space (returns available PSRAM)  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#a7cced42323b5dc4385546e67b4449e07">More...</a><br /></td></tr>
-<tr class="separator:a7cced42323b5dc4385546e67b4449e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47ce7dce2f71d580a5284cc3cc19154"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#ac47ce7dce2f71d580a5284cc3cc19154">begin</a> () override</td></tr>
+<tr class="memdesc:ac47ce7dce2f71d580a5284cc3cc19154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the PSRAM filesystem.  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#ac47ce7dce2f71d580a5284cc3cc19154">More...</a><br /></td></tr>
+<tr class="separator:ac47ce7dce2f71d580a5284cc3cc19154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4688c74ef0336cc293d16e0d07f0af87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#a4688c74ef0336cc293d16e0d07f0af87">exists</a> (const char *filename)</td></tr>
+<tr class="memdesc:a4688c74ef0336cc293d16e0d07f0af87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a file exists.  <a href="classesp32__psram_1_1_in_memory_f_s.html#a4688c74ef0336cc293d16e0d07f0af87">More...</a><br /></td></tr>
+<tr class="separator:a4688c74ef0336cc293d16e0d07f0af87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c0a7d05bde656ea7716345f7c7f480"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#a45c0a7d05bde656ea7716345f7c7f480">fileCount</a> () const</td></tr>
+<tr class="memdesc:a45c0a7d05bde656ea7716345f7c7f480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of files.  <a href="classesp32__psram_1_1_in_memory_f_s.html#a45c0a7d05bde656ea7716345f7c7f480">More...</a><br /></td></tr>
+<tr class="separator:a45c0a7d05bde656ea7716345f7c7f480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f8affcb5f140c7daf65137aea0735c"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#ac8f8affcb5f140c7daf65137aea0735c">freeBytes</a> () override</td></tr>
+<tr class="memdesc:ac8f8affcb5f140c7daf65137aea0735c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get free space (returns free PSRAM)  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#ac8f8affcb5f140c7daf65137aea0735c">More...</a><br /></td></tr>
+<tr class="separator:ac8f8affcb5f140c7daf65137aea0735c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351edc4d81e9735ea049deba6a104609"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#a351edc4d81e9735ea049deba6a104609">getFirstFileName</a> ()</td></tr>
+<tr class="memdesc:a351edc4d81e9735ea049deba6a104609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first file in the filesystem.  <a href="classesp32__psram_1_1_in_memory_f_s.html#a351edc4d81e9735ea049deba6a104609">More...</a><br /></td></tr>
+<tr class="separator:a351edc4d81e9735ea049deba6a104609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9941c3f4cec3ecdb53caad57457282e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#af9941c3f4cec3ecdb53caad57457282e">getNextFileName</a> (const char *currentFileName)</td></tr>
+<tr class="memdesc:af9941c3f4cec3ecdb53caad57457282e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the next file after the specified file.  <a href="classesp32__psram_1_1_in_memory_f_s.html#af9941c3f4cec3ecdb53caad57457282e">More...</a><br /></td></tr>
+<tr class="separator:af9941c3f4cec3ecdb53caad57457282e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbeedd62a8a9ba57613957fd9f223f5c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#abbeedd62a8a9ba57613957fd9f223f5c">mkdir</a> (const char *dirname)</td></tr>
+<tr class="memdesc:abbeedd62a8a9ba57613957fd9f223f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a directory (no-op for compatibility)  <a href="classesp32__psram_1_1_in_memory_f_s.html#abbeedd62a8a9ba57613957fd9f223f5c">More...</a><br /></td></tr>
+<tr class="separator:abbeedd62a8a9ba57613957fd9f223f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af43d6be5d578a7fcecabdb0de3225da8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#af43d6be5d578a7fcecabdb0de3225da8">open</a> (const char *filename, uint8_t mode)</td></tr>
+<tr class="memdesc:af43d6be5d578a7fcecabdb0de3225da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a file.  <a href="classesp32__psram_1_1_in_memory_f_s.html#af43d6be5d578a7fcecabdb0de3225da8">More...</a><br /></td></tr>
+<tr class="separator:af43d6be5d578a7fcecabdb0de3225da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adad6529a4d18f1c3fb7e04a38d832fc4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#adad6529a4d18f1c3fb7e04a38d832fc4">remove</a> (const char *filename)</td></tr>
+<tr class="memdesc:adad6529a4d18f1c3fb7e04a38d832fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a file.  <a href="classesp32__psram_1_1_in_memory_f_s.html#adad6529a4d18f1c3fb7e04a38d832fc4">More...</a><br /></td></tr>
+<tr class="separator:adad6529a4d18f1c3fb7e04a38d832fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8377bd7ee0119b4f2f4ca375e36b63de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#a8377bd7ee0119b4f2f4ca375e36b63de">rmdir</a> (const char *dirname)</td></tr>
+<tr class="memdesc:a8377bd7ee0119b4f2f4ca375e36b63de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a directory (no-op for compatibility)  <a href="classesp32__psram_1_1_in_memory_f_s.html#a8377bd7ee0119b4f2f4ca375e36b63de">More...</a><br /></td></tr>
+<tr class="separator:a8377bd7ee0119b4f2f4ca375e36b63de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af54fdbe212828a5579d9d716c783d8e4"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html#af54fdbe212828a5579d9d716c783d8e4">totalBytes</a> () override</td></tr>
+<tr class="memdesc:af54fdbe212828a5579d9d716c783d8e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get total space (returns available PSRAM)  <a href="classesp32__psram_1_1_p_s_r_a_m_class.html#af54fdbe212828a5579d9d716c783d8e4">More...</a><br /></td></tr>
+<tr class="separator:af54fdbe212828a5579d9d716c783d8e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ae8ca2cc0055aced353afcde23b8337f1"><td class="memItemLeft" align="right" valign="top"><a id="ae8ca2cc0055aced353afcde23b8337f1"></a>
+std::map&lt; std::string, <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>fileData</b></td></tr>
+<tr class="separator:ae8ca2cc0055aced353afcde23b8337f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4913f4690e85735c206f99cffc7ae047"><td class="memItemLeft" align="right" valign="top"><a id="a4913f4690e85735c206f99cffc7ae047"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>initialized</b></td></tr>
+<tr class="separator:a4913f4690e85735c206f99cffc7ae047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class for managing files stored in ESP32's PSRAM: Use the PSRAM object instead instaniating this class directly. </p>
+<div class="textblock"><p>Class for managing files stored in ESP32's PSRAM. </p>
 <p>This class provides an interface similar to SD.h for managing files that are stored in PSRAM memory rather than on an SD card. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab70203127c09e7bb7df3cb7961b0762d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab70203127c09e7bb7df3cb7961b0762d">&#9670;&nbsp;</a></span>begin()</h2>
+<a id="ac47ce7dce2f71d580a5284cc3cc19154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac47ce7dce2f71d580a5284cc3cc19154">&#9670;&nbsp;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +155,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -135,10 +163,12 @@ Public Member Functions</h2></td></tr>
 <p>Initialize the PSRAM filesystem. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if initialization was successful, false otherwise </dd></dl>
 
+<p>Implements <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#afb68a3158ed3d0027a3ae7deacee2ca4">esp32_psram::InMemoryFS&lt; VectorPSRAM&lt; uint8_t &gt;, FilePSRAM &gt;</a>.</p>
+
 </div>
 </div>
-<a id="aa89ecf0ff9fe808df9f725ae3d622a89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa89ecf0ff9fe808df9f725ae3d622a89">&#9670;&nbsp;</a></span>exists()</h2>
+<a id="a4688c74ef0336cc293d16e0d07f0af87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4688c74ef0336cc293d16e0d07f0af87">&#9670;&nbsp;</a></span>exists()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,7 +177,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool esp32_psram::PSRAMClass::exists </td>
+          <td class="memname">bool <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html">esp32_psram::InMemoryFS</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; , <a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  &gt;::exists </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -156,12 +186,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check if a file exists in PSRAM. </p>
+<p>Check if a file exists. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>Name of the file to check </td></tr>
@@ -172,8 +202,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5f6bb344efa5f2d3fe1db5c0241da291"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f6bb344efa5f2d3fe1db5c0241da291">&#9670;&nbsp;</a></span>freeBytes()</h2>
+<a id="a45c0a7d05bde656ea7716345f7c7f480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c0a7d05bde656ea7716345f7c7f480">&#9670;&nbsp;</a></span>fileCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html">esp32_psram::InMemoryFS</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; , <a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  &gt;::fileCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the total number of files. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of files in the filesystem </dd></dl>
+
+</div>
+</div>
+<a id="ac8f8affcb5f140c7daf65137aea0735c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8f8affcb5f140c7daf65137aea0735c">&#9670;&nbsp;</a></span>freeBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,7 +248,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -198,10 +256,12 @@ Public Member Functions</h2></td></tr>
 <p>Get free space (returns free PSRAM) </p>
 <dl class="section return"><dt>Returns</dt><dd>Free PSRAM size in bytes </dd></dl>
 
+<p>Implements <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#ab24f043d8986294338ffae8d20fee633">esp32_psram::InMemoryFS&lt; VectorPSRAM&lt; uint8_t &gt;, FilePSRAM &gt;</a>.</p>
+
 </div>
 </div>
-<a id="a70f497d8b0aeba603f092f9716ab4c78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70f497d8b0aeba603f092f9716ab4c78">&#9670;&nbsp;</a></span>mkdir()</h2>
+<a id="a351edc4d81e9735ea049deba6a104609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a351edc4d81e9735ea049deba6a104609">&#9670;&nbsp;</a></span>getFirstFileName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +270,70 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool esp32_psram::PSRAMClass::mkdir </td>
+          <td class="memname">String <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html">esp32_psram::InMemoryFS</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; , <a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  &gt;::getFirstFileName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the first file in the filesystem. </p>
+<dl class="section return"><dt>Returns</dt><dd>Name of the first file, or empty string if there are no files </dd></dl>
+
+</div>
+</div>
+<a id="af9941c3f4cec3ecdb53caad57457282e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9941c3f4cec3ecdb53caad57457282e">&#9670;&nbsp;</a></span>getNextFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html">esp32_psram::InMemoryFS</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; , <a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  &gt;::getNextFileName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>currentFileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the name of the next file after the specified file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentFileName</td><td>Name of the current file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Name of the next file, or empty string if there are no more files </dd></dl>
+
+</div>
+</div>
+<a id="abbeedd62a8a9ba57613957fd9f223f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbeedd62a8a9ba57613957fd9f223f5c">&#9670;&nbsp;</a></span>mkdir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html">esp32_psram::InMemoryFS</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; , <a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  &gt;::mkdir </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>dirname</em></td><td>)</td>
@@ -219,7 +342,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -235,8 +358,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad7b4cb81a8c79c0022101042e5c5ec52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7b4cb81a8c79c0022101042e5c5ec52">&#9670;&nbsp;</a></span>open()</h2>
+<a id="af43d6be5d578a7fcecabdb0de3225da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af43d6be5d578a7fcecabdb0de3225da8">&#9670;&nbsp;</a></span>open()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,7 +368,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a> esp32_psram::PSRAMClass::open </td>
+          <td class="memname"><a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html">esp32_psram::InMemoryFS</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; , <a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  &gt;::open </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -264,12 +387,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Open a file in PSRAM. </p>
+<p>Open a file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>Name of the file to open </td></tr>
@@ -277,12 +400,12 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A FilePSRAM object for the opened file </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A file object for the opened file </dd></dl>
 
 </div>
 </div>
-<a id="a2462c652406a3d27c4844ab64c9a4780"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2462c652406a3d27c4844ab64c9a4780">&#9670;&nbsp;</a></span>remove()</h2>
+<a id="adad6529a4d18f1c3fb7e04a38d832fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad6529a4d18f1c3fb7e04a38d832fc4">&#9670;&nbsp;</a></span>remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -291,7 +414,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool esp32_psram::PSRAMClass::remove </td>
+          <td class="memname">bool <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html">esp32_psram::InMemoryFS</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; , <a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  &gt;::remove </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -300,12 +423,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Remove a file from PSRAM. </p>
+<p>Remove a file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>Name of the file to remove </td></tr>
@@ -316,8 +439,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1610c12372dc2fa3d537b0dbd922180c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1610c12372dc2fa3d537b0dbd922180c">&#9670;&nbsp;</a></span>rmdir()</h2>
+<a id="a8377bd7ee0119b4f2f4ca375e36b63de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8377bd7ee0119b4f2f4ca375e36b63de">&#9670;&nbsp;</a></span>rmdir()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,7 +449,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool esp32_psram::PSRAMClass::rmdir </td>
+          <td class="memname">bool <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html">esp32_psram::InMemoryFS</a>&lt; <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html">VectorPSRAM</a>&lt; uint8_t &gt; , <a class="el" href="classesp32__psram_1_1_in_memory_file.html">FilePSRAM</a>  &gt;::rmdir </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>dirname</em></td><td>)</td>
@@ -335,7 +458,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -351,8 +474,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7cced42323b5dc4385546e67b4449e07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cced42323b5dc4385546e67b4449e07">&#9670;&nbsp;</a></span>totalBytes()</h2>
+<a id="af54fdbe212828a5579d9d716c783d8e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af54fdbe212828a5579d9d716c783d8e4">&#9670;&nbsp;</a></span>totalBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,13 +492,15 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Get total space (returns available PSRAM) </p>
 <dl class="section return"><dt>Returns</dt><dd>Total PSRAM size in bytes </dd></dl>
+
+<p>Implements <a class="el" href="classesp32__psram_1_1_in_memory_f_s.html#aaccd53bdf55e4f0911c9ec0d21948e20">esp32_psram::InMemoryFS&lt; VectorPSRAM&lt; uint8_t &gt;, FilePSRAM &gt;</a>.</p>
 
 </div>
 </div>

@@ -78,7 +78,7 @@ $(function() {
 <p>Manages a block of himem memory with mapping functionality.  
  <a href="classesp32__psram_1_1_himem_block.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_vector_h_i_m_e_m_8h_source.html">VectorHIMEM.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_himem_block_8h_source.html">HimemBlock.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -98,9 +98,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_himem_block.html#a8506731a4b17f4c50810031aed9cf105">~HimemBlock</a> ()</td></tr>
 <tr class="memdesc:a8506731a4b17f4c50810031aed9cf105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor - ensures memory is properly freed. <br /></td></tr>
 <tr class="separator:a8506731a4b17f4c50810031aed9cf105"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1cb8cdc3d99963ad4eff2ea2175f966"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_himem_block.html#af1cb8cdc3d99963ad4eff2ea2175f966">allocate</a> (size_t block_size)</td></tr>
-<tr class="memdesc:af1cb8cdc3d99963ad4eff2ea2175f966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a block of himem.  <a href="classesp32__psram_1_1_himem_block.html#af1cb8cdc3d99963ad4eff2ea2175f966">More...</a><br /></td></tr>
-<tr class="separator:af1cb8cdc3d99963ad4eff2ea2175f966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa083087e8fefad5f5bc9184392401e89"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_himem_block.html#aa083087e8fefad5f5bc9184392401e89">allocate</a> (size_t block_size)</td></tr>
+<tr class="memdesc:aa083087e8fefad5f5bc9184392401e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a block of himem.  <a href="classesp32__psram_1_1_himem_block.html#aa083087e8fefad5f5bc9184392401e89">More...</a><br /></td></tr>
+<tr class="separator:aa083087e8fefad5f5bc9184392401e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03c6cf4162ef8682f68cb7847e5507cb"><td class="memItemLeft" align="right" valign="top"><a id="a03c6cf4162ef8682f68cb7847e5507cb"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_himem_block.html#a03c6cf4162ef8682f68cb7847e5507cb">free</a> ()</td></tr>
 <tr class="memdesc:a03c6cf4162ef8682f68cb7847e5507cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the himem block. <br /></td></tr>
@@ -108,6 +108,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aa82ee20fef0dcd309ea63019da96aa82"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_himem_block.html#aa82ee20fef0dcd309ea63019da96aa82">get_size</a> () const</td></tr>
 <tr class="memdesc:aa82ee20fef0dcd309ea63019da96aa82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the allocated block.  <a href="classesp32__psram_1_1_himem_block.html#aa82ee20fef0dcd309ea63019da96aa82">More...</a><br /></td></tr>
 <tr class="separator:aa82ee20fef0dcd309ea63019da96aa82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91081c06a24f5ec5751f24aab431242f"><td class="memItemLeft" align="right" valign="top"><a id="a91081c06a24f5ec5751f24aab431242f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getAddress</b> (size_t offset, void *&amp;result, size_t &amp;available)</td></tr>
+<tr class="separator:a91081c06a24f5ec5751f24aab431242f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2fddc04850e430b854fbabfeec33ad4"><td class="memItemLeft" align="right" valign="top"><a id="ae2fddc04850e430b854fbabfeec33ad4"></a>
 <a class="el" href="classesp32__psram_1_1_himem_block.html">HimemBlock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_himem_block.html#ae2fddc04850e430b854fbabfeec33ad4">operator=</a> (const <a class="el" href="classesp32__psram_1_1_himem_block.html">HimemBlock</a> &amp;)=delete</td></tr>
 <tr class="memdesc:ae2fddc04850e430b854fbabfeec33ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator (deleted) <br /></td></tr>
@@ -153,8 +156,8 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> = 0</td></
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages a block of himem memory with mapping functionality. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af1cb8cdc3d99963ad4eff2ea2175f966"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1cb8cdc3d99963ad4eff2ea2175f966">&#9670;&nbsp;</a></span>allocate()</h2>
+<a id="aa083087e8fefad5f5bc9184392401e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa083087e8fefad5f5bc9184392401e89">&#9670;&nbsp;</a></span>allocate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +166,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> = 0</td></
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool esp32_psram::HimemBlock::allocate </td>
+          <td class="memname">size_t esp32_psram::HimemBlock::allocate </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>block_size</em></td><td>)</td>
@@ -184,7 +187,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> = 0</td></
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if allocation was successful, false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the allocated (block) size in bytes, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -383,7 +386,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> = 0</td></
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/esp32-psram/<a class="el" href="_vector_h_i_m_e_m_8h_source.html">VectorHIMEM.h</a></li>
+<li>src/esp32-psram/<a class="el" href="_himem_block_8h_source.html">HimemBlock.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

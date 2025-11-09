@@ -78,7 +78,7 @@ $(function() {
 <p>Custom allocator that uses ESP32's PSRAM for memory allocation.  
  <a href="classesp32__psram_1_1_allocator_p_s_r_a_m.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_vector_p_s_r_a_m_8h_source.html">VectorPSRAM.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_allocator_p_s_r_a_m_8h_source.html">AllocatorPSRAM.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -138,7 +138,7 @@ class esp32_psram::AllocatorPSRAM&lt; T &gt;</h3>
   </table>
   </dd>
 </dl>
-<p>This allocator uses ESP32's heap_caps_malloc with MALLOC_CAP_SPIRAM flag to ensure all memory is allocated in PSRAM instead of regular RAM. </p>
+<p>This allocator uses ESP32's heap_caps_malloc with MALLOC_CAP_SPIRAM flag to ensure all memory is allocated in PSRAM instead of regular RAM. If PSRAM allocation fails, it falls back to regular RAM. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abcb49ed17002fc0a9604c752d6f4b778"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcb49ed17002fc0a9604c752d6f4b778">&#9670;&nbsp;</a></span>AllocatorPSRAM()</h2>
@@ -276,7 +276,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/esp32-psram/<a class="el" href="_vector_p_s_r_a_m_8h_source.html">VectorPSRAM.h</a></li>
+<li>src/esp32-psram/<a class="el" href="_allocator_p_s_r_a_m_8h_source.html">AllocatorPSRAM.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

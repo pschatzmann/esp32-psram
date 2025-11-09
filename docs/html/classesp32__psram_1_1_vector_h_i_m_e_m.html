@@ -68,6 +68,10 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="classesp32__psram_1_1_vector_h_i_m_e_m-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">esp32_psram::VectorHIMEM&lt; T &gt; Class Template Reference</div>  </div>
@@ -205,6 +209,36 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a715e97351fe710cabff05f73a7513363"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html#a715e97351fe710cabff05f73a7513363">swap</a> (<a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html">VectorHIMEM</a> &amp;other) noexcept</td></tr>
 <tr class="memdesc:a715e97351fe710cabff05f73a7513363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the contents of this vector with another.  <a href="classesp32__psram_1_1_vector_h_i_m_e_m.html#a715e97351fe710cabff05f73a7513363">More...</a><br /></td></tr>
 <tr class="separator:a715e97351fe710cabff05f73a7513363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ac8be166eb6024e7713dc1dafa508d5c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html#ac8be166eb6024e7713dc1dafa508d5c2">reallocate</a> (size_t new_capacity)</td></tr>
+<tr class="memdesc:ac8be166eb6024e7713dc1dafa508d5c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reallocate memory with a new capacity.  <a href="classesp32__psram_1_1_vector_h_i_m_e_m.html#ac8be166eb6024e7713dc1dafa508d5c2">More...</a><br /></td></tr>
+<tr class="separator:ac8be166eb6024e7713dc1dafa508d5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a23b509486f7fec491abd85c062870a95"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html#a23b509486f7fec491abd85c062870a95">calculate_size_bytes</a> (size_t count)</td></tr>
+<tr class="memdesc:a23b509486f7fec491abd85c062870a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate required memory size in bytes for a given number of elements.  <a href="classesp32__psram_1_1_vector_h_i_m_e_m.html#a23b509486f7fec491abd85c062870a95">More...</a><br /></td></tr>
+<tr class="separator:a23b509486f7fec491abd85c062870a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac013917508890dc16a0a85d8a9b64105"><td class="memItemLeft" align="right" valign="top"><a id="ac013917508890dc16a0a85d8a9b64105"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>element_capacity</b> = 0</td></tr>
+<tr class="separator:ac013917508890dc16a0a85d8a9b64105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9db0a7b464fbf13caf74c346787231c"><td class="memItemLeft" align="right" valign="top"><a id="ad9db0a7b464fbf13caf74c346787231c"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>element_count</b> = 0</td></tr>
+<tr class="separator:ad9db0a7b464fbf13caf74c346787231c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fd4120acb06a7f1ac011be90f293afa"><td class="memItemLeft" align="right" valign="top"><a id="a8fd4120acb06a7f1ac011be90f293afa"></a>
+<a class="el" href="classesp32__psram_1_1_himem_block.html">HimemBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><b>memory</b></td></tr>
+<tr class="separator:a8fd4120acb06a7f1ac011be90f293afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:ad865c7984c301104c186912dd6f6262f"><td class="memItemLeft" align="right" valign="top"><a id="ad865c7984c301104c186912dd6f6262f"></a>
+static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>min_elements</b> = 16</td></tr>
+<tr class="separator:ad865c7984c301104c186912dd6f6262f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -553,6 +587,43 @@ template&lt;typename T &gt; </div>
 
 <p>Access the last element (const version) </p>
 <dl class="section return"><dt>Returns</dt><dd>Const reference to the last element </dd></dl>
+
+</div>
+</div>
+<a id="a23b509486f7fec491abd85c062870a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b509486f7fec491abd85c062870a95">&#9670;&nbsp;</a></span>calculate_size_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t <a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html">esp32_psram::VectorHIMEM</a>&lt; T &gt;::calculate_size_bytes </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate required memory size in bytes for a given number of elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>Number of elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Size in bytes </dd></dl>
 
 </div>
 </div>
@@ -1006,6 +1077,43 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ac8be166eb6024e7713dc1dafa508d5c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8be166eb6024e7713dc1dafa508d5c2">&#9670;&nbsp;</a></span>reallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html">esp32_psram::VectorHIMEM</a>&lt; T &gt;::reallocate </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>new_capacity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reallocate memory with a new capacity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_capacity</td><td>The new capacity to allocate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if reallocation was successful, false otherwise </dd></dl>
 
 </div>
 </div>

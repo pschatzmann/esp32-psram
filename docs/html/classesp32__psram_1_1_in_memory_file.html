@@ -94,6 +94,9 @@ Inheritance diagram for esp32_psram::InMemoryFile&lt; VectorType &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:a2822db24b5f29d9d4c102a4963aae751"><td class="memItemLeft" align="right" valign="top"><a id="a2822db24b5f29d9d4c102a4963aae751"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>NextFileCallback</b> = std::function&lt; <a class="el" href="classesp32__psram_1_1_in_memory_file.html">InMemoryFile</a>&lt; VectorType &gt;(const char *, FileMode)&gt;</td></tr>
+<tr class="separator:a2822db24b5f29d9d4c102a4963aae751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e9ad174fdec6e86887c42a63072e6b0"><td class="memItemLeft" align="right" valign="top"><a id="a0e9ad174fdec6e86887c42a63072e6b0"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream.html#a0e9ad174fdec6e86887c42a63072e6b0">oneShotMs</a> = esp8266::polledTimeout::oneShotFastMs</td></tr>
 <tr class="memdesc:a0e9ad174fdec6e86887c42a63072e6b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time management for stream operations. <br /></td></tr>
@@ -174,6 +177,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:acc6e049536cbfd05f2817ec888d1a195"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_stream.html#a37c8a5527f741942d10ecd2a53c1f220">Report</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream.html#acc6e049536cbfd05f2817ec888d1a195">getLastSendReport</a> () const</td></tr>
 <tr class="memdesc:acc6e049536cbfd05f2817ec888d1a195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the result of the last send operation.  <a href="class_stream.html#acc6e049536cbfd05f2817ec888d1a195">More...</a><br /></td></tr>
 <tr class="separator:acc6e049536cbfd05f2817ec888d1a195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbdc1728d7b750d1c4942843430a7735"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classesp32__psram_1_1_in_memory_file.html">InMemoryFile</a>&lt; VectorType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_file.html#afbdc1728d7b750d1c4942843430a7735">getNextFile</a> ()</td></tr>
+<tr class="memdesc:afbdc1728d7b750d1c4942843430a7735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next file in the filesystem.  <a href="classesp32__psram_1_1_in_memory_file.html#afbdc1728d7b750d1c4942843430a7735">More...</a><br /></td></tr>
+<tr class="separator:afbdc1728d7b750d1c4942843430a7735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19f96f9a1614b0fa7944547ad6c25d6c"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream.html#a19f96f9a1614b0fa7944547ad6c25d6c">getTimeout</a> () const</td></tr>
 <tr class="memdesc:a19f96f9a1614b0fa7944547ad6c25d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current timeout setting.  <a href="class_stream.html#a19f96f9a1614b0fa7944547ad6c25d6c">More...</a><br /></td></tr>
 <tr class="separator:a19f96f9a1614b0fa7944547ad6c25d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -412,6 +418,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af3bf6acf83193d19f5a45e4d30976654"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_file.html#af3bf6acf83193d19f5a45e4d30976654">setName</a> (const char *<a class="el" href="classesp32__psram_1_1_in_memory_file.html#ad44c04dfd1c7ba79a9ba76f9e198ab42">name</a>)</td></tr>
 <tr class="memdesc:af3bf6acf83193d19f5a45e4d30976654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of this file.  <a href="classesp32__psram_1_1_in_memory_file.html#af3bf6acf83193d19f5a45e4d30976654">More...</a><br /></td></tr>
 <tr class="separator:af3bf6acf83193d19f5a45e4d30976654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55387f998c9788a43d4ec7155c7b06fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classesp32__psram_1_1_in_memory_file.html#a55387f998c9788a43d4ec7155c7b06fa">setNextFileCallback</a> (NextFileCallback callback)</td></tr>
+<tr class="memdesc:a55387f998c9788a43d4ec7155c7b06fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set callback for navigating to the next file.  <a href="classesp32__psram_1_1_in_memory_file.html#a55387f998c9788a43d4ec7155c7b06fa">More...</a><br /></td></tr>
+<tr class="separator:a55387f998c9788a43d4ec7155c7b06fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a851dd6dc74d52389de04f99648478db5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream.html#a851dd6dc74d52389de04f99648478db5">setTimeout</a> (unsigned long timeout)</td></tr>
 <tr class="memdesc:a851dd6dc74d52389de04f99648478db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timeout for stream operations.  <a href="class_stream.html#a851dd6dc74d52389de04f99648478db5">More...</a><br /></td></tr>
 <tr class="separator:a851dd6dc74d52389de04f99648478db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -535,7 +544,7 @@ class esp32_psram::InMemoryFile&lt; VectorType &gt;</h3>
 <p>A file-like interface for vector-backed storage in memory. </p>
 <p>This class provides a file-like interface (compatible with Arduino's <a class="el" href="class_stream.html" title="Base class for all character and binary stream operations.">Stream</a>) for reading and writing data to vector-backed storage. It can use either standard PSRAM or ESP32's HIMEM (high memory beyond the 4MB boundary) as its underlying storage mechanism through the <a class="el" href="classesp32__psram_1_1_vector_p_s_r_a_m.html" title="Vector implementation that uses ESP32&#39;s PSRAM for storage.">VectorPSRAM</a> and <a class="el" href="classesp32__psram_1_1_vector_h_i_m_e_m.html" title="Vector implementation that uses ESP32&#39;s high memory (himem) for storage.">VectorHIMEM</a> implementations.</p>
 <p><a class="el" href="classesp32__psram_1_1_in_memory_file.html" title="A file-like interface for vector-backed storage in memory.">InMemoryFile</a> offers familiar file operations like open, close, read, write, seek, and truncate while managing the data in memory rather than on disk. This makes it useful for temporary storage, data processing, or situations where file operations are needed but filesystem access is not available or desirable.</p>
-<p>The class can either manage its own internal vector or reference an external vector supplied by another component (like <a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html" title="Class for managing files stored in ESP32&#39;s PSRAM: Use the PSRAM object instead instaniating this clas...">PSRAMClass</a> or <a class="el" href="classesp32__psram_1_1_h_i_m_e_m_class.html" title="Class for managing files stored in ESP32&#39;s High Memory: Use the HIMEM object instead instaniating thi...">HIMEMClass</a>).</p>
+<p>The class can either manage its own internal vector or reference an external vector supplied by another component (like <a class="el" href="classesp32__psram_1_1_p_s_r_a_m_class.html" title="Class for managing files stored in ESP32&#39;s PSRAM.">PSRAMClass</a> or <a class="el" href="classesp32__psram_1_1_h_i_m_e_m_class.html" title="Class for managing files stored in ESP32&#39;s High Memory (HIMEM)">HIMEMClass</a>).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">VectorType</td><td>The vector implementation to use for storage (typically VectorPSRAM&lt;uint8_t&gt; or VectorHIMEM&lt;uint8_t&gt;)</td></tr>
@@ -1156,6 +1165,37 @@ template&lt;typename VectorType &gt; </div>
 
 <p>Get the result of the last send operation. </p>
 <dl class="section return"><dt>Returns</dt><dd>Status code indicating success or failure reason </dd></dl>
+
+</div>
+</div>
+<a id="afbdc1728d7b750d1c4942843430a7735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbdc1728d7b750d1c4942843430a7735">&#9670;&nbsp;</a></span>getNextFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename VectorType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classesp32__psram_1_1_in_memory_file.html">InMemoryFile</a>&lt;VectorType&gt; <a class="el" href="classesp32__psram_1_1_in_memory_file.html">esp32_psram::InMemoryFile</a>&lt; VectorType &gt;::getNextFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the next file in the filesystem. </p>
+<p>This method uses the registered callback to get the next file after this one in the filesystem.</p>
+<dl class="section return"><dt>Returns</dt><dd>The next file, or an empty file if there is no next file or callback isn't set </dd></dl>
 
 </div>
 </div>
@@ -4744,6 +4784,43 @@ template&lt;typename VectorType &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a55387f998c9788a43d4ec7155c7b06fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55387f998c9788a43d4ec7155c7b06fa">&#9670;&nbsp;</a></span>setNextFileCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename VectorType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classesp32__psram_1_1_in_memory_file.html">esp32_psram::InMemoryFile</a>&lt; VectorType &gt;::setNextFileCallback </td>
+          <td>(</td>
+          <td class="paramtype">NextFileCallback&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set callback for navigating to the next file. </p>
+<p>This function sets a callback that will be used to retrieve the next file when <a class="el" href="classesp32__psram_1_1_in_memory_file.html#afbdc1728d7b750d1c4942843430a7735" title="Get the next file in the filesystem.">getNextFile()</a> is called. The callback takes the current file name and mode, and returns the next file object directly.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>Function that returns the next file </td></tr>
   </table>
   </dd>
 </dl>

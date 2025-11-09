@@ -70,8 +70,12 @@ $(function() {
 <h1><a class="anchor" id="autotoc_md1"></a>
 Overview</h1>
 <p>The ESP32 can only address 4MB of PSRAM directly, so the remaining 4MB (HIMEM) are usually unsued!</p>
-<p><b>ESP32-PSRAM</b> is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM.</p>
+<p><b>esp32-psram</b> is a C++ library that helps you manage large amounts of data on ESP32 devices by utilizing the full external PSRAM (SPI RAM) supporting the high memory (HIMEM) regions. This allows your applications to work with much larger datasets than would be possible using just internal RAM.</p>
 <ul>
+<li><b>Use any STL Class in PSRAM</b>:<ul>
+<li>Adapt any <a href="https://en.wikipedia.org/wiki/Standard_Template_Library">STL class</a> that accepts with an Allocator by using the <a href="https://pschatzmann.github.io/esp32-psram/html/classesp32__psram_1_1_p_s_r_a_m_allocator.html">AllocatorPSRAM</a></li>
+</ul>
+</li>
 <li><b>Memory-Efficient Data Structures</b>:<ul>
 <li><code>VectorPSRAM</code>: Vector implementation that automatically stores data in PSRAM</li>
 <li><code>VectorHIMEM</code>: Vector implementation for extremely large datasets using ESP32's high memory region</li>
@@ -95,10 +99,6 @@ Overview</h1>
 <li><code>TypedRingBufferPSRAM&lt;T&gt;</code>: PSRAM version for storing complex data structures</li>
 <li><code>TypedRingBufferHIMEM&lt;T&gt;</code>: High memory version for storing complex data structures</li>
 <li>Optimized for struct/class storage with proper memory management</li>
-</ul>
-</li>
-<li><b>Use any STL Class in PSRAM</b>:<ul>
-<li>Adapt any <a href="https://en.wikipedia.org/wiki/Standard_Template_Library">STL class</a> that accepts with an Allocator by using the <a href="https://pschatzmann.github.io/esp32-psram/html/classesp32__psram_1_1_p_s_r_a_m_allocator.html">AllocatorPSRAM</a></li>
 </ul>
 </li>
 </ul>
