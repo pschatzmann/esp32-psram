@@ -53,7 +53,10 @@ public:
         assert(n <= std::numeric_limits<size_type>::max() / sizeof(T));
             
         pointer p = static_cast<pointer>(heap_caps_malloc(n * sizeof(T), MALLOC_CAP_SPIRAM));
-        
+        if (p == nullptr) {
+            p = static_cast<pointer>(malloc(n * sizeof(T)));
+        }
+
         //if (!p) throw std::bad_alloc();
 
         // in Arduino excepitons are disabled!
